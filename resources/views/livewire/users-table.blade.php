@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="flex justify-end ml-96 mr-2">
-                            <a href="#" class="text-white hover:text-black">
+                            <a href="{{route('usuario.new')}}" class="text-white hover:text-black">
                                 <span class="hidden sm:block" >
                                     <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:text-gray-700 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 ">
                                     <!-- Heroicon name: solid/pencil -->
@@ -91,7 +91,7 @@
                                                     </td>
                                     
                                                     <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
-                                                        <a href="#" class="text-white hover:text-black">
+                                                        <a href="{{route('usuario.edit', $user->id)}}" class="text-white hover:text-black">
                                                             <div class="hidden sm:block">
                                                                 <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-yellow-500 hover:text-gray-700 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
                                                                 <!-- Heroicon name: solid/pencil -->
@@ -105,7 +105,7 @@
                                                     </td>
                                     
                                                     <td class="w-1/12 px-6 py-4 whitespace-nowrap">
-                                                        <a href="#" class="text-white hover:text-black">
+                                                        <a href="{{route('usuario.delete', $user->id)}}" class="text-white hover:text-black">
                                                             <div class="hidden sm:block" >
                                                                 <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:text-gray-700 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                                                                 <!-- Heroicon name: solid/pencil -->

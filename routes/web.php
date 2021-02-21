@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\ProductosEdit;
 use App\Http\Livewire\ProductosTable;
+use App\Http\Livewire\UsersEdit;
 use App\Http\Livewire\UsersTable;
 use Illuminate\Support\Facades\Route;
 
@@ -46,3 +47,17 @@ Route::middleware(['auth:sanctum', 'verified'])
 Route::get('/Usuarios', UsersTable::class)
     ->middleware('auth')
     ->name('usuarios');
+
+Route::get('/Usuarios/editar/{id}', UsersEdit::class)
+    ->middleware('auth')
+    ->where('id', '[0-9]+')
+    ->name('usuario.edit');
+
+Route::get('/Usuarios/eliminar/{ideliminar}', UsersEdit::class)
+    ->middleware('auth')
+    ->where('ideliminar', '[0-9]+')
+    ->name('usuario.delete');
+
+Route::get('/Usuarios/new', UsersEdit::class)
+    ->middleware('auth')
+    ->name('usuario.new');
