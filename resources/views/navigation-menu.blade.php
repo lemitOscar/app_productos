@@ -262,7 +262,7 @@
 
                 <hr class="my-6 dark:border-gray-600" />
 
-                <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700" href="#">
+                <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700" href="{{ route('usuarios') }}" :active="request()->routeIs('usuarios')">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.869 477.869" style="enable-background:new 0 0 477.869 477.869;" xml:space="preserve" width="1.25rem" height="1.25rem">
                         <g>
                             <g>
@@ -271,7 +271,7 @@
                         </g>
                     </svg>
 
-                    <span class="mx-4 font-medium">Usuarios</span>
+                    <span class="mx-4 font-medium">{{ __('Usuarios') }}</span>
                 </a>
 
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700" href="#">

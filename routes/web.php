@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\ProductosEdit;
 use App\Http\Livewire\ProductosTable;
+use App\Http\Livewire\UsersTable;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('auth/login');
 });
-
-Route::get('/Productos', ProductosTable::class)->middleware('auth')->name('productos');
+/*Rutas de Productos*/
+Route::get('/Productos', ProductosTable::class)
+    ->middleware('auth')
+    ->name('productos');
 
 Route::get('/Producto/editar/{id}', ProductosEdit::class)
     ->middleware('auth')
@@ -35,8 +38,11 @@ Route::get('/Producto/new', ProductosEdit::class)
     ->middleware('auth')
     ->name('producto.new');
 
-/*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');*/
+Route::middleware(['auth:sanctum', 'verified'])
+    ->get('/Productos', ProductosTable::class)
+    ->name('productos');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/Productos', ProductosTable::class)->name('productos');
+/*Rutas de Usuarios */
+Route::get('/Usuarios', UsersTable::class)
+    ->middleware('auth')
+    ->name('usuarios');
