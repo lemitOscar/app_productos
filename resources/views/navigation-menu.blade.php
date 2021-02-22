@@ -236,6 +236,7 @@
         </div>
     </div>
 </nav>
+
 <div class="overflow-y h-screen">
     <div class="flex flex-col float-left w-64 h-screen px-4 py-2 bg-white bg-scroll dark:bg-gray-800 dark:border-gray-600">
         <div class="flex flex-col justify-between flex-1 mt-6">

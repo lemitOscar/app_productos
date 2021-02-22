@@ -12,7 +12,7 @@
                         <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                             <div>
                                 <label class="text-gray-700 dark:text-gray-200" for="name">Nombre del Usuario</label>
-                                <input id="name" type="text" wire:model='user.name' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Nombre">
+                                <input id="name" type="text" name="name" wire:model='user.name' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Nombre" value="{{old('name')}}">
                                 @error('user.name')
                                     <div class="px-4 py-2 mt-1 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
                                         <p>Error! {{$message}}</p>
@@ -22,7 +22,7 @@
           
                             <div>
                               <label class="text-gray-700 dark:text-gray-200" for="email">Correo del Usuario</label>
-                              <input id="email" type="text" wire:model='user.email' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Correo">
+                              <input id="email" type="text" name="email" wire:model='user.email' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Correo" value="{{old('email')}}">
                               @error('user.email')
                                     <div class="px-4 py-2 mt-1 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
                                         <p>Error! {{$message}}</p>
@@ -32,7 +32,7 @@
           
                             <div>
                               <label class="text-gray-700 dark:text-gray-200" for="password">Contraseña</label>
-                              <input id="password" type="text" wire:model='user.password' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Contraseña">
+                              <input id="password" type="text" name="password" wire:model='user.password' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Contraseña" value="{{old('password')}}">
                               @error('user.password')
                                     <div class="px-4 py-2 mt-1 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
                                         <p>Error! {{$message}}</p>
