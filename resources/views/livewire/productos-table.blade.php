@@ -52,7 +52,11 @@
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Descripción
                                                     </th>
-                                    
+
+                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Cantidad
+                                                    </th>
+
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Precio
                                                     </th>
@@ -83,9 +87,15 @@
                                                             {{$prod->descripcion}}
                                                         </div>
                                                     </td>
-                                    
+
                                                     <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                        <div class="text-sm text-gray-900">
+                                                            {{$prod->cantidad}}
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                        <div class="text-sm text-gray-900">
                                                             ${{$prod->precio}}
                                                         </div>
                                                     </td>

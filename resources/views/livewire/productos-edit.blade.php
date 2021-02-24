@@ -9,6 +9,9 @@
                 <section class="max-w-4xl p-6 mx-auto bg-white rounded-md dark:bg-gray-800">
                     <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Información de Producto</h2>  
                     <form action="#" wire:submit.prevent='guardar' method="POST">
+
+                        @csrf
+
                         <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                             <div>
                                 <label class="text-gray-700 dark:text-gray-200" for="codigo">Código del Producto</label>

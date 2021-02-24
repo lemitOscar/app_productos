@@ -4,6 +4,7 @@ use App\Http\Livewire\ProductosEdit;
 use App\Http\Livewire\ProductosTable;
 use App\Http\Livewire\UsersEdit;
 use App\Http\Livewire\UsersTable;
+use App\Http\Controllers\PrincipalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth/login');
-});
+Route::get('/', PrincipalController::class);
+
 /*Rutas de Productos*/
 Route::get('/Productos', ProductosTable::class)
     ->middleware('auth')
