@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Producto extends Model
 {
+    protected $dateFormat = 'Ymd H:i:s';
     use HasFactory;
     protected $table = 'productos';
 }

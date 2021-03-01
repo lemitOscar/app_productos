@@ -19,6 +19,8 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
     use HasRoles;
+    protected $dateFormat = 'Ymd H:i:s';
+
     /**
      * The attributes that are mass assignable.
      *

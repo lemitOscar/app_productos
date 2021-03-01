@@ -13,6 +13,7 @@ class ProductosEdit extends Component
     protected $rules = [
         'prod.codigo' => 'required|min:6|max:10', 
         'prod.descripcion' => 'required|max:50',
+        'prod.cantidad' => 'required|numeric',
         'prod.precio' => 'required|numeric'
     ];
 
