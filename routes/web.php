@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactoController;
 use App\Http\Livewire\ProductosEdit;
 use App\Http\Livewire\ProductosTable;
 use App\Http\Livewire\UsersEdit;

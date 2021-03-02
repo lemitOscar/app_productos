@@ -293,7 +293,7 @@
                 </a>
 
                 <hr class="my-6 dark:border-gray-600" />
-
+                <!--
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="1.25rem" height="1.25rem">
                         <g id="sign_·_ecommerce_·_shopping_·_tag_·_sale" data-name="sign · ecommerce · shopping · tag · sale">
@@ -329,6 +329,7 @@
                 </a>
 
                 <hr class="my-4 dark:border-gray-600" />
+            -->
             </nav>
         </div>
     </div>
