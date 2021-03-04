@@ -23,9 +23,9 @@ class ProductoFactory extends Factory
     public function definition()
     {
         return [
-            'codigo' => $this->faker->numberBetween($min = 10000, $max = 90000), 
+            'codigo' => $this->faker->numberBetween($min = 1000000000, $max = 9000000000), 
             'descripcion' => 'Productos de Prueba', 
-            'cantidad' => $this->faker->randomNumber($nbDigits = Null, $strict = false), 
+            'cantidad' => $this->faker->randomNumber($nbDigits = 3, $strict = false, $min = 1), 
             'precio' => $this->faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 100),
         ];
     }
