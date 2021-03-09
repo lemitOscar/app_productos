@@ -16,4 +16,9 @@ class Inventory extends Model
     public function category(){
         return $this->belongsTo('App\Models\Category');
     }
+
+    //muchos a muchos
+    public function productos(){
+        return $this->belongsToMany('App\Models\Producto');
+    }
 }

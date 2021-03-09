@@ -69,4 +69,9 @@ class User extends Authenticatable
     public function stocks(){
         return $this->hasMany('App\Models\Stock');
     }
+
+    public function productos(){
+        return $this->hasMany('App\Models\Producto');
+    }
+
 }

@@ -21,16 +21,25 @@
                             </div>
                         </div>
 
-                        <div class="flex ml-2 mr-2 md:w-1/4">
-                            <select id="country" name="country" autocomplete="country" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                <option>Código</option>
-                                <option>Nombre</option>
-                                <option>Cantidad</option>
-                                <option>Precio</option>
+                        <div class="relative mr-2 ml-2 md:w-1/4">
+                            <select wire:model="filtro" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300">
+                                <option value="codigo">Código</option>
+                                <option value="nombre">Nombre</option>
+                                <option value="nombre">Marca</option>
+                                <option value="cantidad">Cantidad</option>
+                                <option value="precio">Precio</option>
                             </select>
+                            <div class="absolute top-0 left-0 inline-flex items-center p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="0" y="0" width="24" height="24" stroke="none">
+                                    </rect>
+                                    <circle cx="10" cy="10" r="7" />
+                                    <line x1="21" y1="21" x2="15" y2="15" />
+                                </svg>
+                            </div>
                         </div>
 
-                        <div class="flex ml-2 mr-2">
+                        <div class="flex ml-48 mr-2">
                             <a href="{{route('producto.new')}}" class="text-white hover:text-black">
                                 <span class="hidden sm:block" >
                                     <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:text-gray-700 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 ">
@@ -58,7 +67,15 @@
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Código
                                                     </th>
-                                    
+                                                    
+                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Nombre
+                                                    </th>
+
+                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Marca
+                                                    </th>
+                                                    
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Descripción
                                                     </th>
@@ -92,6 +109,18 @@
                                                         </div>
                                                     </td>
                                     
+                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                        <div class="text-sm text-gray-900">
+                                                            {{$prod->nombre}}
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                        <div class="text-sm text-gray-900">
+                                                            {{$prod->marca}}
+                                                        </div>
+                                                    </td>
+
                                                     <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
                                                         <div class="text-sm text-gray-900">
                                                             {{$prod->descripcion}}

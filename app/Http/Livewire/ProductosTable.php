@@ -16,14 +16,16 @@ class ProductosTable extends Component
     public $buscar;
     public $titulo;
 
+    public $filtro = 'codigo';    
+
     public function render()
     {
         $this->titulo = "Productos";
         $buscarSQL = '%'.$this->buscar.'%';
         $prods = Producto::orderby('codigo')
-            ->where('codigo','like',$buscarSQL)
-            ->orwhere('descripcion','like',$buscarSQL)
-            ->paginate(3);
+            ->where($this->filtro,'like',$buscarSQL)
+            //->orwhere('nombre','like',$buscarSQL)
+            ->paginate(5);
             
         return view('livewire.productos-table', compact('prods'));
     }

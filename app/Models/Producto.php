@@ -10,4 +10,14 @@ class Producto extends Model
     protected $dateFormat = 'Ymd H:i:s';
     use HasFactory;
     protected $table = 'productos';
+    //Relación uno a muchos
+
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+
+    //muchos a muchos
+    public function inventories(){
+        return $this->belongsToMany('App\Models\Inventory');
+    }
 }
