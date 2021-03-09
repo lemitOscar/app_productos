@@ -1,7 +1,7 @@
 @section('titulo')
       {{$titulo}}
 @endsection
-<div class="w-4/5 float-right">
+<div class="w-screen">
     <div class="py-12">
         <div class="w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">  

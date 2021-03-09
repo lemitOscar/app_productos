@@ -16,11 +16,14 @@ class CreateCustomersTable extends Migration
         Schema::create('customers', function (Blueprint $table) {
             $table->id();
 
-            $table->string('nombre', 60);
-            $table->string('email', 60);
-            $table->string('telefono', 60);
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('nombre', 255);
+            $table->string('email', 255);
+            $table->string('telefono', 255);
+
+            $table->unsignedBigInteger('user_id')->unique();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
 
             $table->unsignedBigInteger('address_id')->unique();
             $table->foreign('address_id')

@@ -1,13 +1,14 @@
 @section('titulo')
     {{$titulo}}
 @endsection
-<div class="w-4/5 float-right">
+<div class="w-screen">
     <div class="py-12">
         <div class="w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <!-- Buscador -->
                 <div class="flex-1 p-4">
                     <div class="flex items-center">
+
                         <div class="relative md:w-1/2">
                             <input type="search" wire:model="buscar" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300" placeholder="Buscar...">
                             <div class="absolute top-0 left-0 inline-flex items-center p-2">
@@ -20,7 +21,16 @@
                             </div>
                         </div>
 
-                        <div class="flex justify-end ml-96 mr-2">
+                        <div>
+                            <select id="country" name="country" autocomplete="country" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <option>Código</option>
+                                <option>Nombre</option>
+                                <option>Cantidad</option>
+                                <option>Precio</option>
+                            </select>
+                        </div>
+
+                        <div class="flex ml-52 mr-2">
                             <a href="{{route('producto.new')}}" class="text-white hover:text-black">
                                 <span class="hidden sm:block" >
                                     <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:text-gray-700 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 ">

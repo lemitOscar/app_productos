@@ -62,7 +62,11 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
     //uno a uno
-    /*public function customer(){
+    public function customer(){
         return $this->hasOne('App\Models\Customer');
-    }*/
+    }
+    //uno a muchos
+    public function stocks(){
+        return $this->hasMany('App\Models\Stock');
+    }
 }

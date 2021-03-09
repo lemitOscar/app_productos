@@ -11,23 +11,29 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <!--<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="" :active="request()->routeIs('dashboard')">
-                        
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('productos') }}" :active="request()->routeIs('productos')">
+                        {{ __('Productos') }}
                     </x-jet-nav-link>
-                </div>-->
+                </div>
 
-                <!--<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="" :active="request()->routeIs('productos')">
-                        
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="#" :active="request()->routeIs('clientes')">
+                        {{ __('Clientes') }}  
                     </x-jet-nav-link>
-                </div>-->
+                </div>
 
-                <!--<div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="" :active="request()->routeIs('producto.new')">
-                        
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{route('usuarios')}}" :active="request()->routeIs('usuarios')">
+                        {{ __('Usuarios') }}
                     </x-jet-nav-link>
-                </div>-->
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="#" :active="request()->routeIs('almacenes')">
+                        {{ __('Almacenes') }}
+                    </x-jet-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -164,6 +170,24 @@
             </x-jet-responsive-nav-link>
         </div>
 
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="#" :active="request()->routeIs('clientes')">
+                {{ __('Clientes') }}
+            </x-jet-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="#" :active="request()->routeIs('usuarios')">
+                {{ __('Usuarios') }}
+            </x-jet-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="#" :active="request()->routeIs('almacenes')">
+                {{ __('Almacenes') }}
+            </x-jet-responsive-nav-link>
+        </div>
+
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="flex items-center px-4">
@@ -182,7 +206,7 @@
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('Perfil') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -198,7 +222,7 @@
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                     this.closest('form').submit();">
-                        {{ __('Logout') }}
+                        {{ __('Cerrar Sesión') }}
                     </x-jet-responsive-nav-link>
                 </form>
 
@@ -236,16 +260,16 @@
         </div>
     </div>
 </nav>
-
+<!--
 <div class="overflow-y h-screen">
     <div class="flex flex-col float-left w-64 h-screen px-4 py-2 bg-white bg-scroll dark:bg-gray-800 dark:border-gray-600">
         <div class="flex flex-col justify-between flex-1 mt-6">
             <nav>
-                <a class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-200" href="{{ route('productos') }}" :active="request()->routeIs('productos')">
+                <a class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-200 rounded dark:bg-gray-700 dark:text-gray-200" href="#" :active="request()->routeIs('productos')">
                     <svg xmlns="http://www.w3.org/2000/svg" id="Layer_3" data-name="Layer 3" viewBox="0 0 64 64" width="1.25rem" height="1.25rem">
                     <path d="M54.83,47.416,55.9,38.89A4,4,0,0,0,55,31H53.909a6,6,0,0,0-4.676-4.852l3.682-15.34a7.947,7.947,0,0,0-13.4-7.425l-.567-1.7a1,1,0,0,0-1.655-.391L35.8,2.783,32.447,1.105a1,1,0,0,0-1.376,1.267l1.58,3.95a9.02,9.02,0,0,0-6.406,6.626A5.717,5.717,0,0,1,25,9.4V8.816A3,3,0,0,0,27,6V4a3,3,0,0,0-3-3H16a3,3,0,0,0-3,3V6a3,3,0,0,0,2,2.816V9.4a5.724,5.724,0,0,1-2.555,4.773A7.722,7.722,0,0,0,9,20.605V31a4,4,0,0,0-.9,7.89L9.17,47.416,5.914,50.672A3.121,3.121,0,0,0,8.121,56a3.134,3.134,0,0,0,2.026-.766l.423,3.386A5.008,5.008,0,0,0,15.531,63H48.469a5.008,5.008,0,0,0,4.961-4.38l.423-3.386A3.1,3.1,0,0,0,59,52.879a3.1,3.1,0,0,0-.914-2.207ZM46.414,39h7.453l-.828,6.625ZM57,35a2,2,0,0,1-2,2H44.414l-4-4H55A2,2,0,0,1,57,35Zm-5.142-4H38.414l-2.086-2.086A3.142,3.142,0,0,0,34.121,28,3.1,3.1,0,0,0,32,28.845a3.122,3.122,0,0,0-1-.628V20.605c0-.158-.02-.314-.029-.471A3.98,3.98,0,0,1,32.8,21.149a1,1,0,0,0,1.4,0,3.984,3.984,0,0,1,6.522,1.417,1,1,0,0,0,1.2.6A3.948,3.948,0,0,1,43,23a4,4,0,0,1,4,4,1,1,0,0,0,1,1A4,4,0,0,1,51.858,31ZM32,33.414,35.586,37H28.414ZM45.182,3a5.953,5.953,0,0,1,5.788,7.341L47.82,23.463A5.975,5.975,0,0,0,43,21a5.235,5.235,0,0,0-.781.06,5.93,5.93,0,0,0-4.108-2.945l1.16-9.859A5.952,5.952,0,0,1,45.182,3ZM33.905,4.071l1.648.824a1,1,0,0,0,1.154-.188l.855-.856.515,1.541a7.749,7.749,0,0,0-.423,1.015A8.942,8.942,0,0,0,35,6c-.107,0-.21.012-.316.016ZM35,8a6.982,6.982,0,0,1,2.244.368L36.1,18.07a5.93,5.93,0,0,0-2.6,1.06,5.937,5.937,0,0,0-2.947-1.087,7.7,7.7,0,0,0-2.529-3.518A7,7,0,0,1,35,8ZM15,4a1,1,0,0,1,1-1h8a1,1,0,0,1,1,1V6a1,1,0,0,1-1,1H16a1,1,0,0,1-1-1ZM11,20.605a5.724,5.724,0,0,1,2.555-4.773A7.722,7.722,0,0,0,17,9.4V9h6V9.4a7.722,7.722,0,0,0,3.445,6.437A5.724,5.724,0,0,1,29,20.605v7.538a3.121,3.121,0,0,0-1.328.771L27,29.586V22a1,1,0,0,0-1-1H14a1,1,0,0,0-1,1v9H11ZM25,31H15V23H25ZM7,35a2,2,0,0,1,2-2H23.586l-4,4H9A2,2,0,0,1,7,35Zm3.133,4h7.453l-6.625,6.625ZM8.121,54a1.121,1.121,0,0,1-.793-1.914L29.086,30.328A1.121,1.121,0,0,1,31,31.121a1.112,1.112,0,0,1-.328.793L8.914,53.672A1.133,1.133,0,0,1,8.121,54ZM23,44V56a1,1,0,0,1-2,0V44.414l1.344-1.344A.994.994,0,0,1,23,44ZM51.445,58.372A3,3,0,0,1,48.469,61H15.531a3,3,0,0,1-2.976-2.628l-.613-4.9L19,46.414V56a3,3,0,0,0,6,0V44a2.985,2.985,0,0,0-1.2-2.385L26.414,39H37.586L40.2,41.615A2.985,2.985,0,0,0,39,44V56a3,3,0,0,0,6,0V46.414l7.058,7.058ZM41,44a.994.994,0,0,1,.656-.93L43,44.414V56a1,1,0,0,1-2,0ZM55.879,54a1.133,1.133,0,0,1-.793-.328L33.328,31.914A1.121,1.121,0,0,1,34.121,30a1.133,1.133,0,0,1,.793.328L56.672,52.086A1.121,1.121,0,0,1,55.879,54Z"/><path d="M32,41a3,3,0,0,0-3,3V56a3,3,0,0,0,6,0V44A3,3,0,0,0,32,41Zm1,15a1,1,0,0,1-2,0V44a1,1,0,0,1,2,0Z"/><rect x="44" y="6.459" width="2" height="6.083" transform="translate(28.231 52.326) rotate(-80.538)"/><rect x="43" y="11.459" width="2" height="6.083" transform="translate(22.464 55.518) rotate(-80.538)"/>
                     </svg>
-                    <span class="mx-4 font-medium">{{ __('Productos') }}</span>
+                    <span class="mx-4 font-medium"></span>
                 </a>
 
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700" href="#">
@@ -263,7 +287,7 @@
 
                 <hr class="my-6 dark:border-gray-600" />
 
-                <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700" href="{{ route('usuarios') }}" :active="request()->routeIs('usuarios')">
+                <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700" href="#" :active="request()->routeIs('usuarios')">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.869 477.869" style="enable-background:new 0 0 477.869 477.869;" xml:space="preserve" width="1.25rem" height="1.25rem">
                         <g>
                             <g>
@@ -272,7 +296,7 @@
                         </g>
                     </svg>
 
-                    <span class="mx-4 font-medium">{{ __('Usuarios') }}</span>
+                    <span class="mx-4 font-medium"></span>
                 </a>
 
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700" href="#">
@@ -293,7 +317,7 @@
                 </a>
 
                 <hr class="my-6 dark:border-gray-600" />
-                <!--
+                
                 <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="1.25rem" height="1.25rem">
                         <g id="sign_·_ecommerce_·_shopping_·_tag_·_sale" data-name="sign · ecommerce · shopping · tag · sale">
@@ -327,9 +351,9 @@
 
                     <span class="mx-4 font-medium">Corte de Caja</span>
                 </a>
-
                 <hr class="my-4 dark:border-gray-600" />
-            -->
             </nav>
         </div>
     </div>
+</div>
+-->

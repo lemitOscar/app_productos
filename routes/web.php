@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvisosController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Livewire\ProductosEdit;
 use App\Http\Livewire\ProductosTable;
@@ -62,3 +63,4 @@ Route::get('/Usuarios/eliminar/{ideliminar}', UsersEdit::class)
 Route::get('/Usuarios/new', UsersEdit::class)
     ->middleware('auth')
     ->name('usuario.new');
+

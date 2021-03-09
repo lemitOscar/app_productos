@@ -1,14 +1,14 @@
 @section('titulo')
     {{$titulo}}
 @endsection
-<div class="w-4/5 float-right">
+<div class="w-screen">
     <div class="py-12">
         <div class="w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <!-- Buscador -->
                 <div class="flex-1 p-4">
                     <div class="flex items-center">
-                        <div class="relative md:w-1/2">
+                        <div class="relative md:w-3/4">
                             <input type="search" wire:model="buscar" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300" placeholder="Buscar...">
                             <div class="absolute top-0 left-0 inline-flex items-center p-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -20,8 +20,8 @@
                             </div>
                         </div>
 
-                        <div class="flex justify-end ml-96 mr-2">
-                            <a href="{{route('usuario.new')}}" class="text-white hover:text-black">
+                        <div class="flex ml-52 mr-2">
+                            <a href="{{ route('usuario.new') }}" class="text-white hover:text-black">
                                 <span class="hidden sm:block" >
                                     <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:text-gray-700 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 ">
                                     <!-- Heroicon name: solid/pencil -->
