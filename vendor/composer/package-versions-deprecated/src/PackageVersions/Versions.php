@@ -33,6 +33,7 @@ final class Versions
      * @internal
      */
     const VERSIONS          = array (
+  'almasaeed2010/adminlte' => 'v3.0.5@6b8b69261f1aacbb4be037c934f3c3652e6dff27',
   'asm89/stack-cors' => 'v2.0.2@8d8f88b3b3830916be94292c1fbce84433efb1aa',
   'bacon/bacon-qr-code' => '2.0.3@3e9d791b67d0a2912922b7b7c7312f4b37af41e4',
   'brick/math' => '0.9.2@dff976c2f3487d42c1db75a3b180e2b9f0e72ce0',
@@ -54,6 +55,7 @@ final class Versions
   'guzzlehttp/psr7' => '1.7.0@53330f47520498c0ae1f61f7e2c90f55690c06a3',
   'jaybizzle/crawler-detect' => 'v1.2.104@a581e89a9212c4e9d18049666dc735718c29de9c',
   'jenssegers/agent' => 'v2.6.4@daa11c43729510b3700bc34d414664966b03bffe',
+  'jeroennoten/laravel-adminlte' => 'v3.5.3@424f2e9bc741b54905564f99e618a46abeff79b5',
   'laravel/fortify' => 'v1.7.5@12c33249673f16cc1e01d6a3a0e92372153a2f92',
   'laravel/framework' => 'v8.26.1@275c78c97e007e4a9d771d4d1caa1c77ebfdcf94',
   'laravel/jetstream' => 'v2.1.3@9996dfd8e6898a5b45d627ab6a5cdfbd255a47da',

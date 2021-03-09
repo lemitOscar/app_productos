@@ -29,11 +29,20 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'd555dc863f6295490938cc2309b19383e62652a8',
+    'reference' => '9f224dac4f54475b983120bc4bceab4c48d6b387',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
   array (
+    'almasaeed2010/adminlte' => 
+    array (
+      'pretty_version' => 'v3.0.5',
+      'version' => '3.0.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6b8b69261f1aacbb4be037c934f3c3652e6dff27',
+    ),
     'asm89/stack-cors' => 
     array (
       'pretty_version' => 'v2.0.2',
@@ -517,6 +526,15 @@ private static $installed = array (
       ),
       'reference' => 'daa11c43729510b3700bc34d414664966b03bffe',
     ),
+    'jeroennoten/laravel-adminlte' => 
+    array (
+      'pretty_version' => 'v3.5.3',
+      'version' => '3.5.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '424f2e9bc741b54905564f99e618a46abeff79b5',
+    ),
     'kodova/hamcrest-php' => 
     array (
       'replaced' => 
@@ -558,7 +576,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'd555dc863f6295490938cc2309b19383e62652a8',
+      'reference' => '9f224dac4f54475b983120bc4bceab4c48d6b387',
     ),
     'laravel/sail' => 
     array (
