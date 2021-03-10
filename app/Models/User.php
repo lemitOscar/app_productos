@@ -74,4 +74,15 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Producto');
     }
 
+    public function adminlte_Image(){
+        return 'https://picsum.photos/300/300';
+    }
+
+    public function adminlte_desc(){
+        return 'Administrador';
+    }
+
+    public function adminlte_profile_url(){
+        return 'profile/username';
+    }
 }

@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', PrincipalController::class);
+//Route::get('/', PrincipalController::class);
 
 /*Rutas de Productos*/
 Route::get('/Productos', ProductosTable::class)

@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
 
-Route::get('', function () {
-    return 'Admin';
-});
+use App\Http\Controllers\Admin\HomeController;
+use Doctrine\DBAL\Schema\Index;
+
+Route::get('/', [HomeController::class, 'index'])->name('index');

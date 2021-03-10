@@ -17,24 +17,8 @@
             }
         </style>
     </head>
-    @php
-        $color = 'red';    
-    @endphp
     <body>
         <div class="container mx-auto">
-            <x-alert :color="$color" class="mb-4">
-                <x-slot name="title">
-                    Titulo 1
-                </x-slot>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat voluptate, deleniti recusandae quia eaque architecto ipsam officia qui quibusdam! Vel cum facilis earum reprehenderit harum esse repellendus voluptatem autem ea!
-            </x-alert>
-
-            <x-alert2 color="red" class="mb-4">
-                <x-slot name="title">
-                    Titulo de Prueba
-                </x-slot>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod iure eos saepe sapiente velit cumque eligendi doloremque provident animi perferendis, cum perspiciatis magni ut assumenda quibusdam, corrupti repudiandae error molestias?
-            </x-alert2>
         </div>
     </body>
 </html>
