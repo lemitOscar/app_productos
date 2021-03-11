@@ -8,6 +8,6 @@ class PrincipalController extends Controller
 {
     public function __invoke()
     {
-        return view('livewire.productos');
+        return view('auth.login');
     }
 }

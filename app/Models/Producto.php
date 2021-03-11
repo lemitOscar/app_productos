@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Producto extends Model
 {
-    protected $dateFormat = 'Ymd H:i:s';
     use HasFactory;
+    
+    protected $dateFormat = 'Ymd H:i:s';
     protected $table = 'productos';
     //Relación uno a muchos
 

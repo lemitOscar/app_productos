@@ -138,7 +138,7 @@
                                                             ${{$prod->precio}}
                                                         </div>
                                                     </td>
-                                    
+                                                    @if ($prods->count())
                                                     <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
                                                         <a href="{{route('producto.edit', $prod->id)}}" class="text-white hover:text-black">
                                                             <div class="hidden sm:block">
@@ -166,6 +166,7 @@
                                                             </div>
                                                         </a>
                                                     </td>
+                                                    @endif
                                                 </tr>
                                             @endforeach
                                             <!-- More items... -->

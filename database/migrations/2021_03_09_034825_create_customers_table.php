@@ -20,10 +20,11 @@ class CreateCustomersTable extends Migration
             $table->string('email', 255);
             $table->string('telefono', 255);
 
-            $table->unsignedBigInteger('user_id')->unique();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')
                 ->references('id')
-                ->on('users');
+                ->on('users')
+                ->onDelete('set null');
 
             $table->unsignedBigInteger('address_id')->unique();
             $table->foreign('address_id')

@@ -20,10 +20,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', PrincipalController::class);
+Route::get('/', PrincipalController::class);
+
+//Route::get('/Home', [PrincipalController::class, 'index'])->name('index');
 
 /*Rutas de Productos*/
-Route::get('/Productos', ProductosTable::class)
+Route::get('/Home', ProductosTable::class)
     ->middleware('auth')
     ->name('productos');
 
