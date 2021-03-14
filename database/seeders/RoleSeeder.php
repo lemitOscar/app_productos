@@ -23,7 +23,5 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => "producto.new"])->syncRoles([$roleadmin, $roleseller]);
         Permission::create(['name' => "producto.edit"])->syncRoles([$roleadmin, $roleseller]);
         Permission::create(['name' => "producto.delete"])->syncRoles([$roleadmin, $roleseller]);
-
-        
     }
 }

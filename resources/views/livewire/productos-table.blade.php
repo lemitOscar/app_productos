@@ -25,7 +25,7 @@
                             <select wire:model="filtro" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300">
                                 <option value="codigo">Código</option>
                                 <option value="nombre">Nombre</option>
-                                <option value="nombre">Marca</option>
+                                <option value="marca">Marca</option>
                                 <option value="cantidad">Cantidad</option>
                                 <option value="precio">Precio</option>
                             </select>
@@ -138,6 +138,7 @@
                                                             ${{$prod->precio}}
                                                         </div>
                                                     </td>
+
                                                     @if ($prods->count())
                                                     <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
                                                         <a href="{{route('producto.edit', $prod->id)}}" class="text-white hover:text-black">
@@ -182,7 +183,7 @@
                             </div>
                     @else
                         <div class="bg-white px-4 py-3 item-center justify-between border-t border-gray-200 sm:px-6">
-                            No hay resultado para la busqueda "{{$buscar}}"
+                            No hay resultado(s) o registro(s) para la busqueda "{{$buscar}}"
                         </div>
                     @endif
                 </div>

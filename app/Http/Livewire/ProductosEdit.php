@@ -8,6 +8,7 @@ use Livewire\Component;
 class ProductosEdit extends Component
 {
     public Producto $prod;
+
     public $titulo;
 
     protected $rules = [
@@ -16,10 +17,10 @@ class ProductosEdit extends Component
         'prod.marca' => 'required|max:50',
         'prod.descripcion' => 'required|max:50',
         'prod.cantidad' => 'required|numeric',
-        'prod.precio' => 'required|numeric'
+        'prod.precio' => 'required|numeric',
     ];
 
-    public function mount($id = null, $ideliminar = null){
+    public function mount($id = null, $ideliminar = null ){
         if(is_null($id) && is_null($ideliminar)){
             $this->titulo = "Nuevo Producto";
             $this->prod = new Producto();

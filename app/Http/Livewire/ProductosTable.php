@@ -16,7 +16,7 @@ class ProductosTable extends Component
     public $buscar;
     public $titulo;
 
-    public $filtro = 'codigo';    
+    public $filtro = 'codigo';
 
     public function render()
     {
