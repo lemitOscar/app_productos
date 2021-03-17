@@ -12,6 +12,8 @@
         "doctrine/dbal": "^3.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
+        "geekcom/phpjasper": "^3.1",
+        "geekcom/phpjasper-laravel": "^1.1",
         "guzzlehttp/guzzle": "^7.0.1",
         "jeroennoten/laravel-adminlte": "^3.5",
         "laravel/framework": "^8.12",

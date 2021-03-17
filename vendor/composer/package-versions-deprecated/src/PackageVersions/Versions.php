@@ -49,6 +49,8 @@ final class Versions
   'egulias/email-validator' => '2.1.25@0dbf5d78455d4d6a41d186da50adc1122ec066f4',
   'fideloper/proxy' => '4.4.1@c073b2bd04d1c90e04dc1b787662b558dd65ade0',
   'fruitcake/laravel-cors' => 'v2.0.3@01de0fe5f71c70d1930ee9a80385f9cc28e0f63a',
+  'geekcom/phpjasper' => '3.1.0@ac11aa16e9bb22599a17d0d16a7cc2ea22f9c781',
+  'geekcom/phpjasper-laravel' => 'v1.1@f15078b15d1373636d324118396fa8b16163ad9d',
   'graham-campbell/result-type' => 'v1.0.1@7e279d2cd5d7fbb156ce46daada972355cea27bb',
   'guzzlehttp/guzzle' => '7.2.0@0aa74dfb41ae110835923ef10a9d803a22d50e79',
   'guzzlehttp/promises' => '1.4.0@60d379c243457e073cff02bc323a2a86cb355631',
@@ -156,7 +158,7 @@ final class Versions
   'sebastian/type' => '2.3.1@81cd61ab7bbf2de744aba0ea61fae32f721df3d2',
   'sebastian/version' => '3.0.2@c6c1022351a901512170118436c764e473f6de8c',
   'theseer/tokenizer' => '1.2.0@75a63c33a8577608444246075ea0af0d052e452a',
-  'laravel/laravel' => 'dev-main@9f224dac4f54475b983120bc4bceab4c48d6b387',
+  'laravel/laravel' => 'dev-main@e81ef1ef95ba7c062170b1cf5beab473bfe91a94',
 );
 
     private function __construct()

@@ -3,7 +3,7 @@
 @section('title', 'Punto de Venta')
 
 @section('content_header')
-    <h1>Productos</h1>
+    <h1>Dashboard</h1>
 @stop
 
 @section('content')
@@ -18,8 +18,8 @@
 @section('js')
     <script>
         Swal.fire(
-            'Good job!',
-            'You clicked the button!',
+            '¡Bienvenido!',
+            'Administrador',
             'success'
         )
     </script>

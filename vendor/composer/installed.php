@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '9f224dac4f54475b983120bc4bceab4c48d6b387',
+    'reference' => 'e81ef1ef95ba7c062170b1cf5beab473bfe91a94',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -222,6 +222,24 @@
       array (
       ),
       'reference' => '01de0fe5f71c70d1930ee9a80385f9cc28e0f63a',
+    ),
+    'geekcom/phpjasper' => 
+    array (
+      'pretty_version' => '3.1.0',
+      'version' => '3.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'ac11aa16e9bb22599a17d0d16a7cc2ea22f9c781',
+    ),
+    'geekcom/phpjasper-laravel' => 
+    array (
+      'pretty_version' => 'v1.1',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f15078b15d1373636d324118396fa8b16163ad9d',
     ),
     'graham-campbell/result-type' => 
     array (
@@ -553,7 +571,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '9f224dac4f54475b983120bc4bceab4c48d6b387',
+      'reference' => 'e81ef1ef95ba7c062170b1cf5beab473bfe91a94',
     ),
     'laravel/sail' => 
     array (

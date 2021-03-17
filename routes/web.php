@@ -8,6 +8,7 @@ use App\Http\Livewire\ProductosTable;
 use App\Http\Livewire\UsersEdit;
 use App\Http\Livewire\UsersTable;
 use App\Http\Controllers\PrincipalController;
+use App\Http\Controllers\ReporteController;
 use App\Http\Livewire\CustomersEdit;
 use App\Http\Livewire\CustomersTable;
 use App\Http\Livewire\Home;
@@ -50,6 +51,12 @@ Route::get('/Producto/eliminar/{ideliminar}', ProductosEdit::class)
 Route::get('/Producto/new', ProductosEdit::class)
     ->middleware('auth')
     ->name('producto.new');
+
+Route::get('/Producto/Reporte', [ReporteController::class, 'reporteProductos'])
+    ->middleware('auth')
+    ->name('productos.file');
+
+/*Formatos 'pdf', 'rtf', 'xls', 'xlsx', 'docx', 'odt', 'ods', 'pptx', 'csv', 'html', 'xhtml', 'xml', 'jrprint' */
 
 /*Rutas de Clientes*/
 Route::get('/Clientes', CustomersTable::class)
