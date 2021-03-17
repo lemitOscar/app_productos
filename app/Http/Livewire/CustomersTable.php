@@ -2,29 +2,28 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Producto;
+use App\Models\Customer;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class ProductosTable extends Component
+class CustomersTable extends Component
 {
     use WithPagination;
 
     protected $queryString = ['buscar' => ['except' => '']];
     public $buscar;
     public $titulo;
-    public $filtro = 'codigo';
+    public $filtro = 'nombre';
     public $orden = 'ASC';
 
     public function render()
     {
-        $this->titulo = "Productos";
+        $this->titulo = "Clientes";
         $buscarSQL = '%'.$this->buscar.'%';
-        $prods = Producto::orderby('codigo', $this->orden)
+        $customers = Customer::orderby('id', $this->orden)
             ->where($this->filtro,'like',$buscarSQL)
-            //->orwhere('nombre','like',$buscarSQL)
             ->paginate(5);
-            
-        return view('livewire.productos-table', compact('prods'));
+
+        return view('livewire.customers-table', compact('customers'));
     }
 }

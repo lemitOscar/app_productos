@@ -10,6 +10,8 @@ class Customer extends Model
 {
     use HasFactory;
 
+    protected $table = 'customers';
+
     public function address(){
         return $this->belongsTo('App\Models\Address');
     }

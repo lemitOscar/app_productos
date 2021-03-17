@@ -8,7 +8,8 @@
                 <!-- Buscador -->
                 <div class="flex-1 p-4">
                     <div class="flex items-center">
-                        <div class="relative md:w-3/4">
+
+                        <div class="relative md:w-1/2">
                             <input type="search" wire:model="buscar" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300" placeholder="Buscar...">
                             <div class="absolute top-0 left-0 inline-flex items-center p-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -20,8 +21,27 @@
                             </div>
                         </div>
 
-                        <div class="flex ml-52 mr-2">
-                            <a href="{{ route('usuario.new') }}" class="text-white hover:text-black">
+                        <div class="relative mr-0 ml-2 w-32 pl-2 pr-0 py-2 rounded-lg shadow rounded-r-none focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300 hover:border-gray-300">
+                            Buscar Por:
+                        </div>
+
+                        <div class="relative mr-2 -ml-2 md:w-1/4">
+                            <select wire:model="filtro" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300">
+                                <option value="name">Nombre</option>
+                                <option value="email">Correo</option>
+                            </select>
+                            <div class="absolute top-0 left-0 inline-flex items-center p-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="0" y="0" width="24" height="24" stroke="none">
+                                    </rect>
+                                    <circle cx="10" cy="10" r="7" />
+                                    <line x1="21" y1="21" x2="15" y2="15" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="flex ml-48 mr-2">
+                            <a href="{{route('user.new')}}" class="text-white hover:text-black">
                                 <span class="hidden sm:block" >
                                     <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:text-gray-700 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 ">
                                     <!-- Heroicon name: solid/pencil -->
@@ -48,11 +68,11 @@
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Nombre
                                                     </th>
-                                    
+                                                    
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Correo
                                                     </th>
-                                    
+
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Contraseña
                                                     </th>
@@ -72,26 +92,27 @@
                                             <tbody class="bg-white divide-y divide-gray-200">
                                             @foreach ($users as $user)      
                                                 <tr>
-                                                    <td class="w-1/4 px-6 py-3 text-center whitespace-nowrap">
+                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
                                                         <div class="text-sm text-gray-900">
                                                             {{$user->name}}
                                                         </div>
                                                     </td>
                                     
-                                                    <td class="w-1/4 px-6 py-3 text-center whitespace-nowrap">
+                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
                                                         <div class="text-sm text-gray-900">
                                                             {{$user->email}}
                                                         </div>
                                                     </td>
-                                    
-                                                    <td class="w-1/4 px-6 py-3 text-center whitespace-nowrap">
+
+                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
                                                         <div class="text-sm text-gray-900">
                                                             {{$user->password}}
                                                         </div>
                                                     </td>
-                                    
+
+                                                    @if ($users->count())
                                                     <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
-                                                        <a href="{{route('usuario.edit', $user->id)}}" class="text-white hover:text-black">
+                                                        <a href="{{route('user.edit', $user->id)}}" class="text-white hover:text-black">
                                                             <div class="hidden sm:block">
                                                                 <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-yellow-500 hover:text-gray-700 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
                                                                 <!-- Heroicon name: solid/pencil -->
@@ -105,7 +126,7 @@
                                                     </td>
                                     
                                                     <td class="w-1/12 px-6 py-4 whitespace-nowrap">
-                                                        <a href="{{route('usuario.delete', $user->id)}}" class="text-white hover:text-black">
+                                                        <a href="{{route('user.delete', $user->id)}}" class="text-white hover:text-black">
                                                             <div class="hidden sm:block" >
                                                                 <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:text-gray-700 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                                                                 <!-- Heroicon name: solid/pencil -->
@@ -117,6 +138,7 @@
                                                             </div>
                                                         </a>
                                                     </td>
+                                                    @endif
                                                 </tr>
                                             @endforeach
                                             <!-- More items... -->
@@ -132,7 +154,7 @@
                             </div>
                     @else
                         <div class="bg-white px-4 py-3 item-center justify-between border-t border-gray-200 sm:px-6">
-                            No hay resultado para la busqueda "{{$buscar}}"
+                            No hay resultado(s) o registro(s) para la busqueda "{{$buscar}}"
                         </div>
                     @endif
                 </div>

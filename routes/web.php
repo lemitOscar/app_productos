@@ -8,9 +8,12 @@ use App\Http\Livewire\ProductosTable;
 use App\Http\Livewire\UsersEdit;
 use App\Http\Livewire\UsersTable;
 use App\Http\Controllers\PrincipalController;
+use App\Http\Livewire\CustomersEdit;
+use App\Http\Livewire\CustomersTable;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Index;
 use App\Http\Livewire\Navigation;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,26 +26,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-//Route::get('/', PrincipalController::class);
-
 Route::get('/', Home::class)->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/Inicio', Index::class)
     ->name('inicio');
 
-/*Route::middleware(['auth:sanctum', 'verified'])
-    ->get('/Home', Home::class)
-    ->name('home');*/
-
-//Route::get('/Home', [PrincipalController::class, 'index'])->name('index');
-
-/*Rutas de Productos
-Route::middleware(['auth:sanctum', 'verified'])
-    ->get('/Productos', ProductosTable::class)
-    ->name('productos');*/
-
+/*Rutas de Productos*/
 Route::get('/Productos', ProductosTable::class)
     ->middleware('auth')
     ->name('productos');
@@ -61,22 +51,46 @@ Route::get('/Producto/new', ProductosEdit::class)
     ->middleware('auth')
     ->name('producto.new');
 
+/*Rutas de Clientes*/
+Route::get('/Clientes', CustomersTable::class)
+    ->middleware('auth')
+    ->name('customers');
+
+    Route::get('/Cliente/editar/{id}', CustomersEdit::class)
+    ->middleware('auth')
+    ->where('id', '[0-9]+')
+    ->name('customer.edit');
+
+Route::get('/Cliente/eliminar/{ideliminar}', CustomersEdit::class)
+    ->middleware('auth')
+    ->where('ideliminar', '[0-9]+')
+    ->name('customer.delete');
+
+Route::get('/Cliente/new', CustomersEdit::class)
+    ->middleware('auth')
+    ->name('customer.new');
+
+Route::get('/Cliente/direccion/{id}', CustomersTable::class)
+    ->middleware('auth')
+    ->where('id', '[0-9]+')
+    ->name('customer.address');
+
 /*Rutas de Usuarios */
 Route::get('/Usuarios', UsersTable::class)
     ->middleware('auth')
-    ->name('usuarios');
+    ->name('users');
 
 Route::get('/Usuarios/editar/{id}', UsersEdit::class)
     ->middleware('auth')
     ->where('id', '[0-9]+')
-    ->name('usuario.edit');
+    ->name('user.edit');
 
 Route::get('/Usuarios/eliminar/{ideliminar}', UsersEdit::class)
     ->middleware('auth')
     ->where('ideliminar', '[0-9]+')
-    ->name('usuario.delete');
+    ->name('user.delete');
 
 Route::get('/Usuarios/new', UsersEdit::class)
     ->middleware('auth')
-    ->name('usuario.new');
+    ->name('user.new');
 

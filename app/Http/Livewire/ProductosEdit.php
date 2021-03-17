@@ -24,6 +24,7 @@ class ProductosEdit extends Component
         if(is_null($id) && is_null($ideliminar)){
             $this->titulo = "Nuevo Producto";
             $this->prod = new Producto();
+            //Auth::user()->id;
         }elseif(is_null($id)){
             $this->prod = Producto::find($ideliminar);
             $this->prod->delete();

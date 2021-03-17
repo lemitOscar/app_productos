@@ -10,19 +10,19 @@ class UsersTable extends Component
     use WithPagination;
 
     protected $queryString = ['buscar' => ['except' => '']];
-
     public $buscar;
     public $titulo;
+    public $filtro = 'name';
+    public $orden = 'ASC';
 
     public function render()
     {
         $this->titulo = "Usuarios";
         $buscarSQL = '%'.$this->buscar.'%';
-        $users = User::orderby('name')
-            ->where('name','like',$buscarSQL)
-            ->orwhere('email','like',$buscarSQL)
-            ->paginate(3);
-                
+        $users = User::orderby('name', $this->orden)
+            ->where($this->filtro,'like',$buscarSQL)
+            ->paginate(5);
+
         return view('livewire.users-table', compact('users'));
     }
 }

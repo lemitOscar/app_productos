@@ -24,7 +24,7 @@
                             </div>
 
                             <div>
-                                <label class="text-gray-700 dark:text-gray-200" for="descripcion">Nombre del Producto</label>
+                                <label class="text-gray-700 dark:text-gray-200" for="nombre">Nombre del Producto</label>
                                 <input id="nombre" type="text" name="nombre" wire:model='prod.nombre' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Nombre" value="{{old('nombre')}}">
                                 @error('prod.nombre')
                                       <div class="px-4 py-2 mt-1 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">

@@ -187,7 +187,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -232,26 +232,31 @@ return [
         [
             'text' => 'Inicio',
             'route' => 'index',
+            'icon' => 'fas fa-tachometer-alt fa-fw',
         ],
         ['header' => 'CONTROL DE PRODUCTO'],
         [
             'text' => 'Productos',
             'url' => 'admin/pages',
+            'icon' => 'fas fa-shopping-basket fa-fw'
         ],
         ['header' => 'CONTROL DE CLIENTES'],
         [
             'text' => 'Clientes',
-            'url' => 'admin/pages',
+            'route' => 'admin.customers.index',
+            'icon' => 'fas fa-users fa-fw',
         ],
         ['header' => 'CONTROL DE USUARIOS'],
         [
             'text' => 'Usuarios',
             'url' => 'admin/settings',
+            'icon' => 'fas fa-user fa-fw',
         ],
         ['header' => 'CONTROL DE ALMACENES'],
         [
             'text' => 'Almacenes',
             'url' => 'admin/settings',
+            'icon' => 'fas fa-warehouse fa-fw',
         ],
         /*[
             'text' => 'multilevel',

@@ -45,8 +45,8 @@
               <!--<a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>-->
               <a href="{{ route('inicio') }}" class="text-gray-400 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
               <a href="{{ route('productos') }}" class="text-gray-400 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-sm font-medium">Productos</a>
-              <a href="#" class="text-gray-400 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-sm font-medium">Clientes</a>
-              <a href="#" class="text-gray-400 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-sm font-medium">Usuarios</a>
+              <a href="{{ route('customers') }}" class="text-gray-400 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-sm font-medium">Clientes</a>
+              <a href="{{ route('users') }}" class="text-gray-400 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-sm font-medium">Usuarios</a>
               <a href="#" class="text-gray-400 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-sm font-medium">Almacenes</a>
             </div>
           </div>
@@ -83,7 +83,7 @@
             -->
             <div x-show="open" x-on:click.away="open = false" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
               <a href="{{route('profile.show')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Tu Perfil</a>
-              
+              <a href="{{route('index')}}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Panel de Control</a>
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" onclick="event.preventDefault();
@@ -99,12 +99,12 @@
         @else
 
         <div>
-            <a href="{{route('login')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <a href="{{route('login')}}" class="text-gray-400 hover:bg-gray-100 hover:text-black px-3 py-2 rounded-md text-sm font-medium">
                 Login
             </a>
-            <a href="{{route('register')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+            <!--<a href="" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                 Registrar
-            </a>
+            </a>-->
         </div>
 
     @endauth
