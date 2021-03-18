@@ -56,6 +56,10 @@ Route::get('/Producto/Reporte', [ReporteController::class, 'reporteProductos'])
     ->middleware('auth')
     ->name('productos.file');
 
+Route::get('/Producto/Reporte/Compilar', [ReporteController::class, 'compilarReporte'])
+    ->middleware('auth')
+    ->name('productos.file.compile');
+
 /*Formatos 'pdf', 'rtf', 'xls', 'xlsx', 'docx', 'odt', 'ods', 'pptx', 'csv', 'html', 'xhtml', 'xml', 'jrprint' */
 
 /*Rutas de Clientes*/

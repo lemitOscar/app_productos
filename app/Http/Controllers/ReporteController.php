@@ -3,16 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Env;
 use Illuminate\Support\Facades\Auth;
 use PHPJasper\PHPJasper;
 
 class ReporteController extends Controller
 {
     public function reporteProductos(){
-        /*$input = 'C:\Users\Francisco\JaspersoftWorkspace\MyReports\ReporteProducto.jrxml';   
-        $jasper = new PHPJasper;
-        $jasper->compile($input)->execute();*/
-
         $input = 'C:\Users\Francisco\JaspersoftWorkspace\MyReports\ReporteProducto.jasper';  
         $output = 'C:\Users\Francisco\JaspersoftWorkspace\MyReports';    
         $options = [
@@ -38,8 +35,13 @@ class ReporteController extends Controller
         )->execute();
 
         return response()->file($output.'\ReporteProducto.pdf');
+    }
 
+    public function compilarReporte(){
+        $input = 'C:\Users\Francisco\JaspersoftWorkspace\MyReports\ReporteProducto.jrxml';   
+        $jasper = new PHPJasper;
+        $jasper->compile($input)->execute();
 
-        return 'Reporte Productos';
+        return 'Reporte Compilado';
     }
 }
