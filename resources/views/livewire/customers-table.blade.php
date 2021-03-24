@@ -79,35 +79,7 @@
                                                     </th>
                                                     
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    País
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Estado
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Municipio
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Localidad
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Código Postal
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Calle
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Núm Ext.
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Núm Int.
+                                                    Dirección
                                                     </th>
                                     
                                                     <th scope="col" class="w-1/12 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -145,49 +117,14 @@
 
                                                     <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
                                                         <div class="text-sm text-gray-900">
-                                                            {{$customer->address->pais}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$customer->address->estado}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$customer->address->municipio}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$customer->address->localidad}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$customer->address->codigo_postal}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
                                                             {{$customer->address->calle}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
                                                             {{$customer->address->num_ext}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
                                                             {{$customer->address->num_int}}
+                                                            {{$customer->address->localidad}}
+                                                            {{$customer->address->codigo_postal}}
+                                                            {{$customer->address->municipio}}
+                                                            {{$customer->address->estado}}
+                                                            {{$customer->address->pais}}
                                                         </div>
                                                     </td>
 

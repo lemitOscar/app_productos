@@ -36,6 +36,7 @@ class ComposerStaticInitc00e7c0221783ab87c5965663cc502b1
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'ed962a97bd972bc82007176b647d4e36' => __DIR__ . '/..' . '/facade/ignition/src/helpers.php',
+        'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
         '40275907c8566c390185147049ef6e5d' => __DIR__ . '/..' . '/livewire/livewire/src/helpers.php',
         '377b22b161c09ed6e5152de788ca020a' => __DIR__ . '/..' . '/spatie/laravel-permission/src/helpers.php',
     );
@@ -187,6 +188,7 @@ class ComposerStaticInitc00e7c0221783ab87c5965663cc502b1
         'C' => 
         array (
             'Cron\\' => 5,
+            'Collective\\Html\\' => 16,
             'Carbon\\' => 7,
         ),
         'B' => 
@@ -402,8 +404,8 @@ class ComposerStaticInitc00e7c0221783ab87c5965663cc502b1
         ),
         'PHPJasper\\' => 
         array (
-            0 => __DIR__ . '/..' . '/geekcom/phpjasper-laravel/src',
-            1 => __DIR__ . '/..' . '/geekcom/phpjasper/src',
+            0 => __DIR__ . '/..' . '/geekcom/phpjasper/src',
+            1 => __DIR__ . '/..' . '/geekcom/phpjasper-laravel/src',
         ),
         'Opis\\Closure\\' => 
         array (
@@ -565,6 +567,10 @@ class ComposerStaticInitc00e7c0221783ab87c5965663cc502b1
         'Cron\\' => 
         array (
             0 => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron',
+        ),
+        'Collective\\Html\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravelcollective/html/src',
         ),
         'Carbon\\' => 
         array (
@@ -808,6 +814,13 @@ class ComposerStaticInitc00e7c0221783ab87c5965663cc502b1
         'Carbon\\Traits\\Units' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Units.php',
         'Carbon\\Traits\\Week' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Traits/Week.php',
         'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
+        'Collective\\Html\\Componentable' => __DIR__ . '/..' . '/laravelcollective/html/src/Componentable.php',
+        'Collective\\Html\\Eloquent\\FormAccessible' => __DIR__ . '/..' . '/laravelcollective/html/src/Eloquent/FormAccessible.php',
+        'Collective\\Html\\FormBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/FormBuilder.php',
+        'Collective\\Html\\FormFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/FormFacade.php',
+        'Collective\\Html\\HtmlBuilder' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlBuilder.php',
+        'Collective\\Html\\HtmlFacade' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlFacade.php',
+        'Collective\\Html\\HtmlServiceProvider' => __DIR__ . '/..' . '/laravelcollective/html/src/HtmlServiceProvider.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/AbstractField.php',
         'Cron\\CronExpression' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/CronExpression.php',
@@ -3828,12 +3841,12 @@ class ComposerStaticInitc00e7c0221783ab87c5965663cc502b1
         'Opis\\Closure\\SecurityProvider' => __DIR__ . '/..' . '/opis/closure/src/SecurityProvider.php',
         'Opis\\Closure\\SelfReference' => __DIR__ . '/..' . '/opis/closure/src/SelfReference.php',
         'Opis\\Closure\\SerializableClosure' => __DIR__ . '/..' . '/opis/closure/src/SerializableClosure.php',
-        'PHPJasper\\Exception\\ErrorCommandExecutable' => __DIR__ . '/..' . '/geekcom/phpjasper-laravel/src/Exception/ErrorCommandExecutable.php',
-        'PHPJasper\\Exception\\InvalidCommandExecutable' => __DIR__ . '/..' . '/geekcom/phpjasper-laravel/src/Exception/InvalidCommandExecutable.php',
-        'PHPJasper\\Exception\\InvalidFormat' => __DIR__ . '/..' . '/geekcom/phpjasper-laravel/src/Exception/InvalidFormat.php',
-        'PHPJasper\\Exception\\InvalidInputFile' => __DIR__ . '/..' . '/geekcom/phpjasper-laravel/src/Exception/InvalidInputFile.php',
-        'PHPJasper\\Exception\\InvalidResourceDirectory' => __DIR__ . '/..' . '/geekcom/phpjasper-laravel/src/Exception/InvalidResourceDirectory.php',
-        'PHPJasper\\PHPJasper' => __DIR__ . '/..' . '/geekcom/phpjasper-laravel/src/PHPJasper.php',
+        'PHPJasper\\Exception\\ErrorCommandExecutable' => __DIR__ . '/..' . '/geekcom/phpjasper/src/Exception/ErrorCommandExecutable.php',
+        'PHPJasper\\Exception\\InvalidCommandExecutable' => __DIR__ . '/..' . '/geekcom/phpjasper/src/Exception/InvalidCommandExecutable.php',
+        'PHPJasper\\Exception\\InvalidFormat' => __DIR__ . '/..' . '/geekcom/phpjasper/src/Exception/InvalidFormat.php',
+        'PHPJasper\\Exception\\InvalidInputFile' => __DIR__ . '/..' . '/geekcom/phpjasper/src/Exception/InvalidInputFile.php',
+        'PHPJasper\\Exception\\InvalidResourceDirectory' => __DIR__ . '/..' . '/geekcom/phpjasper/src/Exception/InvalidResourceDirectory.php',
+        'PHPJasper\\PHPJasper' => __DIR__ . '/..' . '/geekcom/phpjasper/src/PHPJasper.php',
         'PHPJasper\\PHPJasperServiceProvider' => __DIR__ . '/..' . '/geekcom/phpjasper-laravel/src/PHPJasperServiceProvider.php',
         'PHPUnit\\Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit\\Framework\\ActualValueIsNotAnObjectException' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Exception/ActualValueIsNotAnObjectException.php',
