@@ -110,83 +110,87 @@
                                                     Editar
                                                     <span class="sr-only">Editar</span>
                                                     </th>
-                                                    
+                                                @can('producto.delete')
                                                     <th scope="col" class="w-1/12 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Eliminar
                                                     <span class="sr-only">Eliminar</span>
                                                     </th>
+                                                @endcan
                                                 </tr>
                                             </thead>
 
                                             <tbody class="bg-white divide-y divide-gray-200">
-                                            @foreach ($prods as $prod)      
-                                                <tr>
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$prod->codigo}}
-                                                        </div>
-                                                    </td>
-                                    
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$prod->nombre}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$prod->marca}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$prod->descripcion}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$prod->cantidad}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            ${{$prod->precio}}
-                                                        </div>
-                                                    </td>
-
-                                                    @if ($prods->count())
-                                                    <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
-                                                        <a href="{{route('producto.edit', $prod->id)}}" class="text-white hover:text-black">
-                                                            <div class="hidden sm:block">
-                                                                <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-yellow-500 hover:text-gray-700 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
-                                                                <!-- Heroicon name: solid/pencil -->
-                                                                    <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
-                                                                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-                                                                    </svg>
-                                                                    Editar
-                                                                </button>
+                                            @foreach ($prods as $prod)
+                                                   
+                                                    <tr>
+                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                            <div class="text-sm text-gray-900">
+                                                                {{$prod->codigo}}
                                                             </div>
-                                                        </a>
-                                                    </td>
-                                    
-                                                    <td class="w-1/12 px-6 py-4 whitespace-nowrap">
-                                                        <a href="{{route('producto.delete', $prod->id)}}" class="text-white hover:text-black">
-                                                            <div class="hidden sm:block" >
-                                                                <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:text-gray-700 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                                                                <!-- Heroicon name: solid/pencil -->
-                                                                    <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
-                                                                        <path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/>
-                                                                    </svg>
-                                                                    Eliminar
-                                                                </button>
+                                                        </td>
+                                        
+                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                            <div class="text-sm text-gray-900">
+                                                                {{$prod->nombre}}
                                                             </div>
-                                                        </a>
-                                                    </td>
-                                                    @endif
-                                                </tr>
+                                                        </td>
+
+                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                            <div class="text-sm text-gray-900">
+                                                                {{$prod->marca}}
+                                                            </div>
+                                                        </td>
+
+                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                            <div class="text-sm text-gray-900">
+                                                                {{$prod->descripcion}}
+                                                            </div>
+                                                        </td>
+
+                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                            <div class="text-sm text-gray-900">
+                                                                {{$prod->cantidad}}
+                                                            </div>
+                                                        </td>
+
+                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                            <div class="text-sm text-gray-900">
+                                                                ${{$prod->precio}}
+                                                            </div>
+                                                        </td>
+
+                                                        @if ($prods->count())
+                                                        <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
+                                                            <a href="{{route('producto.edit', $prod->id)}}" class="text-white hover:text-black">
+                                                                <div class="hidden sm:block">
+                                                                    <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-yellow-500 hover:text-gray-700 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                                                                    <!-- Heroicon name: solid/pencil -->
+                                                                        <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
+                                                                            <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                                                                        </svg>
+                                                                        Editar
+                                                                    </button>
+                                                                </div>
+                                                            </a>
+                                                        </td>
+                                                        @can('producto.delete')
+                                                        <td class="w-1/12 px-6 py-4 whitespace-nowrap">
+                                                            <a href="{{route('producto.delete', $prod->id)}}" class="text-white hover:text-black">
+                                                                <div class="hidden sm:block" >
+                                                                    <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:text-gray-700 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                                                    <!-- Heroicon name: solid/pencil -->
+                                                                        <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
+                                                                            <path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/>
+                                                                        </svg>
+                                                                        Eliminar
+                                                                    </button>
+                                                                </div>
+                                                            </a>
+                                                        </td>
+                                                        @endcan
+                                                        @endif
+                                                    </tr>
+                                                
                                             @endforeach
                                             <!-- More items... -->
                                             </tbody>

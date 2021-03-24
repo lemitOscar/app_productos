@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Env;
 use Illuminate\Support\Facades\Auth;
 use PHPJasper\PHPJasper;
 
@@ -18,7 +17,7 @@ class ReporteController extends Controller
             'params' => ['ID_USER' => Auth::user()->id],
             'db_connection' => [
                 'driver' => 'postgres',
-                'username' => 'postgres',
+                'username' => env('DB_USERNAME'),
                 'password' => 'root',
                 'host' => 'localhost',
                 'database' => 'app_productos',

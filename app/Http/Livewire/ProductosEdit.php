@@ -3,10 +3,14 @@
 namespace App\Http\Livewire;
 
 use App\Models\Producto;
+use App\Models\User;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class ProductosEdit extends Component
 {
+    use AuthorizesRequests;
     public Producto $prod;
 
     public $titulo;
@@ -43,6 +47,11 @@ class ProductosEdit extends Component
     public function guardar(){
         
         $this->validate();
+        if(is_null($this->prod->user_id)){
+            $this->prod->user_id = Auth::user()->id;
+        }
+
+        $this->authorize('update', $this->prod);
 
         $this->prod->save();
 

@@ -14,7 +14,9 @@ use App\Http\Livewire\CustomersTable;
 use App\Http\Livewire\Home;
 use App\Http\Livewire\Index;
 use App\Http\Livewire\Navigation;
+use App\Http\Livewire\StocksTable;
 use App\Models\Customer;
+use App\Models\Stock;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,10 +29,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', Home::class)->name('home');
-
 Route::middleware(['auth:sanctum', 'verified'])
-    ->get('/Inicio', Index::class)
+    ->get('/', Index::class)
     ->name('inicio');
 
 /*Rutas de Productos*/
@@ -44,7 +44,7 @@ Route::get('/Producto/editar/{id}', ProductosEdit::class)
     ->name('producto.edit');
 
 Route::get('/Producto/eliminar/{ideliminar}', ProductosEdit::class)
-    ->middleware('auth')
+    ->middleware(['auth', 'verificarR'])
     ->where('ideliminar', '[0-9]+')
     ->name('producto.delete');
 
@@ -80,11 +80,11 @@ Route::get('/Cliente/eliminar/{ideliminar}', CustomersEdit::class)
 Route::get('/Cliente/new', CustomersEdit::class)
     ->middleware('auth')
     ->name('customer.new');
-
+/*
 Route::get('/Cliente/direccion/{id}', CustomersTable::class)
     ->middleware('auth')
     ->where('id', '[0-9]+')
-    ->name('customer.address');
+    ->name('customer.address');*/
 
 /*Rutas de Usuarios */
 Route::get('/Usuarios', UsersTable::class)
@@ -105,3 +105,7 @@ Route::get('/Usuarios/new', UsersEdit::class)
     ->middleware('auth')
     ->name('user.new');
 
+/*Rutas de Almacenes */
+Route::get('/Almacenes', StocksTable::class)
+    ->middleware('auth')
+    ->name('stocks');
