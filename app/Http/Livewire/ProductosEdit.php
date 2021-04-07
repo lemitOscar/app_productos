@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
+use function PHPUnit\Framework\isNull;
+
 class ProductosEdit extends Component
 {
     use AuthorizesRequests;
@@ -50,7 +52,6 @@ class ProductosEdit extends Component
         if(is_null($this->prod->user_id)){
             $this->prod->user_id = Auth::user()->id;
         }
-
         $this->authorize('update', $this->prod);
 
         $this->prod->save();

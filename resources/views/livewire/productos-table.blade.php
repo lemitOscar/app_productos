@@ -32,6 +32,9 @@
                                 <option value="marca">Marca</option>
                                 <option value="cantidad">Cantidad</option>
                                 <option value="precio">Precio</option>
+                            @foreach ($prods as $prod)
+                                <option value="{{$prod->user->id}}">{{$prod->user->name}}</option>   
+                            @endforeach
                             </select>
                             <div class="absolute top-0 left-0 inline-flex items-center p-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">

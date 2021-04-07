@@ -12,26 +12,26 @@ class ReporteController extends Controller
         $input = 'C:\Users\Francisco\JaspersoftWorkspace\MyReports\ReporteProducto.jasper';  
         $output = 'C:\Users\Francisco\JaspersoftWorkspace\MyReports';    
         $options = [
-            'format' => ['pdf', 'rtf', 'xls', 'xlsx', 'docx', 'odt', 'ods', 'pptx', 'csv', 'html', 'xhtml', 'xml', 'jrprint'],
+            'format' => ['pdf'],
             'locale' => 'en',
             'params' => ['ID_USER' => Auth::user()->id],
             'db_connection' => [
                 'driver' => 'postgres',
                 'username' => env('DB_USERNAME'),
-                'password' => 'root',
-                'host' => 'localhost',
-                'database' => 'app_productos',
-                'port' => '5432'
+                'password' => env('DB_PASSWORD'),
+                'host' => env('DB_HOST'),
+                'database' => env('DB_DATABASE'),
+                'port' => env('DB_PORT'),
             ]
         ];
 
         $jasper = new PHPJasper;
 
-        $jasper->process(
+        return $jasper->process(
                 $input,
                 $output,
                 $options
-        )->execute();
+        )->output();
 
         return response()->file($output.'\ReporteProducto.pdf');
     }

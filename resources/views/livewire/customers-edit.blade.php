@@ -42,6 +42,21 @@
                                     </div>
                               @enderror
                             </div>
+
+                            <div> 
+                                <label class="text-gray-700 dark:text-gray-200" for="user_id">Usuario</label>
+                                <select id='user_id' name="user_id" wire:model='customer.user_id' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">      
+                                    <option value="">Selecciona un Usuario</option>
+                                    @foreach ($users as $user)
+                                            <option value="{{$user->id}}">{{$user->name}}</option>
+                                    @endforeach  
+                                </select>
+                                @error('customer.user_id')
+                                      <div class="px-4 py-2 mt-1 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
+                                          <p>Error! {{$message}}</p>
+                                      </div>
+                                @enderror
+                            </div>
                         </div>
           
                         <div class="flex justify-end mt-6">

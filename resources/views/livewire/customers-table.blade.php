@@ -81,6 +81,10 @@
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Dirección
                                                     </th>
+
+                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    User_id
+                                                    </th>
                                     
                                                     <th scope="col" class="w-1/12 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Editar
@@ -125,6 +129,12 @@
                                                             {{$customer->address->municipio}}
                                                             {{$customer->address->estado}}
                                                             {{$customer->address->pais}}
+                                                        </div>
+                                                    </td>
+
+                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                        <div class="text-sm text-gray-900">
+                                                            {{$customer->user->name}}
                                                         </div>
                                                     </td>
 

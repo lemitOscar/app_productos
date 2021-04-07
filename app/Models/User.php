@@ -63,7 +63,7 @@ class User extends Authenticatable
     ];
     //uno a uno
     public function customer(){
-        return $this->hasOne('App\Models\Customer');
+        return $this->hasMany('App\Models\Customer');
     }
     //uno a muchos
     public function stocks(){
