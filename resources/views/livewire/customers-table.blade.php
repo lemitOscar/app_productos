@@ -1,7 +1,7 @@
 @section('titulo')
     {{$titulo}}
 @endsection
-<div class="w-screen">
+<div class="w-full">
     <div class="py-12">
         <div class="w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -21,11 +21,7 @@
                             </div>
                         </div>
 
-                        <div class="relative mr-0 ml-2 w-32 pl-2 pr-0 py-2 rounded-lg shadow rounded-r-none focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300 hover:border-gray-300">
-                            Buscar Por:
-                        </div>
-
-                        <div class="relative mr-2 -ml-2 md:w-1/4">
+                        <div class="relative mr-2 ml-2 md:w-1/4">
                             <select wire:model="filtro" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300">
                                 <option value="nombre">Nombre</option>
                                 <option value="email">Correo</option>
@@ -81,10 +77,6 @@
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Dirección
                                                     </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    User_id
-                                                    </th>
                                     
                                                     <th scope="col" class="w-1/12 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Editar
@@ -121,20 +113,14 @@
 
                                                     <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
                                                         <div class="text-sm text-gray-900">
-                                                            {{$customer->address->calle}}
-                                                            {{$customer->address->num_ext}}
-                                                            {{$customer->address->num_int}}
-                                                            {{$customer->address->localidad}}
-                                                            {{$customer->address->codigo_postal}}
-                                                            {{$customer->address->municipio}}
-                                                            {{$customer->address->estado}}
-                                                            {{$customer->address->pais}}
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$customer->user->name}}
+                                                            {{$customer->calle}}
+                                                            {{$customer->num_ext}}
+                                                            {{$customer->num_int}}
+                                                            {{$customer->localidad}}
+                                                            {{$customer->codigo_postal}}
+                                                            {{$customer->municipio}}
+                                                            {{$customer->state->nombre}}
+                                                            {{$customer->pais}}
                                                         </div>
                                                     </td>
 

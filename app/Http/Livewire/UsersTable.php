@@ -12,7 +12,7 @@ class UsersTable extends Component
     protected $queryString = ['buscar' => ['except' => '']];
     public $buscar;
     public $titulo;
-    public $filtro = 'name';
+    public $filtro = 'id';
     public $orden = 'ASC';
 
     public function render()

@@ -1,7 +1,7 @@
 @section('titulo')
     {{$titulo}}
 @endsection
-<div class="w-screen">
+<div class="w-full">
     <div class="py-12">
         <div class="w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -21,12 +21,9 @@
                             </div>
                         </div>
 
-                        <div class="relative mr-0 ml-2 w-32 pl-2 pr-0 py-2 rounded-lg shadow rounded-r-none focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300 hover:border-gray-300">
-                            Buscar Por:
-                        </div>
-
-                        <div class="relative mr-2 -ml-2 md:w-1/4">
+                        <div class="relative mr-2 ml-2 md:w-1/4">
                             <select wire:model="filtro" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300">
+                                <option value="id">Busca Por:</option> 
                                 <option value="name">Nombre</option>
                                 <option value="email">Correo</option>
                             </select>
@@ -65,16 +62,12 @@
                                         <table class="min-w-full divide-y divide-gray-200">
                                             <thead class="bg-gray-50">
                                                 <tr>
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    <th scope="col" class="w-1/2 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Nombre
                                                     </th>
                                                     
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    <th scope="col" class="w-1/2 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Correo
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Contraseña
                                                     </th>
                                     
                                                     <th scope="col" class="w-1/12 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -104,41 +97,36 @@
                                                         </div>
                                                     </td>
 
-                                                    <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
-                                                            {{$user->password}}
-                                                        </div>
-                                                    </td>
-
                                                     @if ($users->count())
-                                                    <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
-                                                        <a href="{{route('user.edit', $user->id)}}" class="text-white hover:text-black">
-                                                            <div class="hidden sm:block">
-                                                                <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-yellow-500 hover:text-gray-700 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
-                                                                <!-- Heroicon name: solid/pencil -->
-                                                                    <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
-                                                                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-                                                                    </svg>
-                                                                    Editar
-                                                                </button>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                    
-                                                    <td class="w-1/12 px-6 py-4 whitespace-nowrap">
-                                                        <a href="{{route('user.delete', $user->id)}}" class="text-white hover:text-black">
-                                                            <div class="hidden sm:block" >
-                                                                <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:text-gray-700 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                                                                <!-- Heroicon name: solid/pencil -->
-                                                                    <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
-                                                                        <path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/>
-                                                                    </svg>
-                                                                    Eliminar
-                                                                </button>
-                                                            </div>
-                                                        </a>
-                                                    </td>
-                                                    @endif
+                                                        <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
+                                                            <a href="{{route('user.edit', $user->id)}}" class="text-white hover:text-black">
+                                                                <div class="hidden sm:block">
+                                                                    <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-yellow-500 hover:text-gray-700 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                                                                    <!-- Heroicon name: solid/pencil -->
+                                                                        <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
+                                                                            <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                                                                        </svg>
+                                                                        Editar
+                                                                    </button>
+                                                                </div>
+                                                            </a>
+                                                        </td>
+                                                        
+                                                        <td class="w-1/12 px-6 py-4 whitespace-nowrap">
+                                                            <a href="{{route('user.delete', $user->id)}}" class="text-white hover:text-black">
+                                                                <div class="hidden sm:block" >
+                                                                    <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:text-gray-700 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                                                    <!-- Heroicon name: solid/pencil -->
+                                                                        <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
+                                                                            <path d="M6 2l2-2h4l2 2h4v2H2V2h4zM3 6h14l-1 14H4L3 6zm5 2v10h1V8H8zm3 0v10h1V8h-1z"/>
+                                                                        </svg>
+                                                                        Eliminar
+                                                                    </button>
+                                                                </div>
+                                                            </a>
+                                                        </td>
+                                                        
+                                                        @endif
                                                 </tr>
                                             @endforeach
                                             <!-- More items... -->

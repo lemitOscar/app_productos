@@ -1,7 +1,7 @@
 @section('titulo')
     {{$titulo}}
 @endsection
-<div class="w-screen">
+<div class="w-full">
     <div class="py-12">
         <div class="w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -21,19 +21,16 @@
                             </div>
                         </div>
 
-                        <div class="relative mr-0 ml-2 w-32 pl-2 pr-0 py-2 rounded-lg shadow rounded-r-none focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300 hover:border-gray-300">
-                            Buscar Por:
-                        </div>
-
-                        <div class="relative mr-2 -ml-2 md:w-1/4">
+                        <div class="relative mr-2 ml-2 md:w-1/4">
                             <select wire:model="filtro" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300">
+                                <option value="id">Buscar Por:</option>
                                 <option value="codigo">Código</option>
                                 <option value="nombre">Nombre</option>
                                 <option value="marca">Marca</option>
                                 <option value="cantidad">Cantidad</option>
                                 <option value="precio">Precio</option>
-                            @foreach ($prods as $prod)
-                                <option value="{{$prod->user->id}}">{{$prod->user->name}}</option>   
+                            @foreach ($users as $user)
+                                <option value="{{$user->id}}">{{$user->name}}</option>   
                             @endforeach
                             </select>
                             <div class="absolute top-0 left-0 inline-flex items-center p-2">

@@ -1,6 +1,11 @@
 @section('titulo')
       {{$titulo}}
 @endsection
+@if (session('info'))
+    <div class="alert alert-success">
+        <strong>{{session('info')}}</strong>
+    </div>
+@endif
 <div class="w-screen">
     <div class="py-12">
         <div class="w-full mx-auto sm:px-6 lg:px-8">
@@ -8,42 +13,30 @@
                 <!-- Formulario Editar -->
                 <section class="max-w-4xl p-6 mx-auto bg-white rounded-md dark:bg-gray-800">
                     <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Información del Usuario</h2>  
-                    <form action="#" wire:submit.prevent='guardar' method="POST">
-
-                        @csrf
-
-                        <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
-                            <div>
-                                <label class="text-gray-700 dark:text-gray-200" for="name">Nombre del Usuario</label>
-                                <input id="name" type="text" name="name" wire:model='user.name' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Nombre" value="{{old('name')}}">
-                                @error('user.name')
-                                    <div class="px-4 py-2 mt-1 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
-                                        <p>Error! {{$message}}</p>
-                                    </div>
-                                @enderror  
-                            </div>
-          
-                            <div>
-                              <label class="text-gray-700 dark:text-gray-200" for="email">Correo del Usuario</label>
-                              <input id="email" type="text" name="email" wire:model='user.email' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Correo" value="{{old('email')}}">
-                              @error('user.email')
-                                    <div class="px-4 py-2 mt-1 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
-                                        <p>Error! {{$message}}</p>
-                                    </div>
-                              @enderror
-                            </div>
-          
-                            <div>
-                              <label class="text-gray-700 dark:text-gray-200" for="password">Contraseña</label>
-                              <input id="password" type="text" name="password" wire:model='user.password' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Contraseña" value="{{old('password')}}">
-                              @error('user.password')
-                                    <div class="px-4 py-2 mt-1 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
-                                        <p>Error! {{$message}}</p>
-                                    </div>
-                              @enderror 
-                            </div>
+                    
+                    <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-1">
+                        <div>
+                            <label class="text-gray-700 dark:text-gray-200" for="name">Nombre del Usuario</label>
+                            <input id="name" type="text" name="name" wire:model='user.name' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" disabled> 
                         </div>
-          
+      
+                        <div>
+                          <label class="text-gray-700 dark:text-gray-200" for="email">Correo del Usuario</label>
+                          <input id="email" type="email" name="email" wire:model='user.email' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" disabled>
+                        </div>
+                    
+                    <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Roles de Usuario</h2>
+
+                    
+                    {!! Form::model($user, ['route' => ['user.edit', $user], 'method' => 'up']) !!}
+                        @foreach ($roles as $role)
+                        <div>
+                            <label>
+                                {!! Form::checkbox('roles[]', $role->id, null, ['class' => 'appearance-none checked:bg-blue-600 checked:border-transparent']) !!}
+                                {{$role->name}}
+                            </label>
+                        </div>
+                        @endforeach
                         <div class="flex justify-end mt-6">
                             <span class="hidden sm:block" >
                               <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600">
@@ -55,7 +48,10 @@
                               </button>
                           </span>
                         </div>
-                    </form>
+                        {!! Form::submit('Guardar', ['class' => 'inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600']) !!}
+                    {!! Form::close() !!}
+
+                    </div>
                 </section>
             </div>
         </div>

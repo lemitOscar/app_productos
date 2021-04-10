@@ -3,9 +3,8 @@
 namespace App\Http\Livewire;
 
 use App\Models\Customer;
-use App\Models\User;
+use App\Models\State;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class CustomersEdit extends Component
@@ -19,8 +18,15 @@ class CustomersEdit extends Component
         'customer.nombre' => 'required|max:50',
         'customer.email' => 'required|max:50',
         'customer.telefono' => 'required|max:50',
-        'customer.user_id' => 'required|numeric',
-        'customer.address_id' => 'required|numeric',
+        'customer.pais' => 'required|max:50',
+        'customer.municipio' => 'required|max:50',
+        'customer.localidad' => 'required|max:50',
+        'customer.codigo_postal' => 'required|numeric',
+        'customer.calle' => 'required|max:50',
+        'customer.num_ext' => 'required|numeric',
+        'customer.num_int' => 'required|numeric',
+
+        'customer.state_id' => 'required|numeric',
     ];
 
     public function mount($id = null, $ideliminar = null ){
@@ -39,9 +45,8 @@ class CustomersEdit extends Component
 
     public function render()
     {
-        $users = User::all();
-
-        return view('livewire.customers-edit', compact('users'));
+        $states = State::all()->sortBy('nombre', SORT_NATURAL);
+        return view('livewire.customers-edit', compact('states'));
     }
 
     public function guardar(){

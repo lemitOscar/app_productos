@@ -13,7 +13,6 @@ class UsersEdit extends Component
     protected $rules = [
         'user.name' => 'required|max:255', 
         'user.email' => 'required|max:255',
-        'user.password' => 'required|max:255'
     ];
 
     public function mount($id = null, $ideliminar = null){

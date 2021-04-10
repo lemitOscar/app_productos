@@ -1,13 +1,13 @@
 @section('titulo')
       {{$titulo}}
 @endsection
-<div class="w-screen">
+<div class="w-full">
     <div class="py-12">
         <div class="w-full mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">  
                 <!-- Formulario Editar -->
                 <section class="max-w-4xl p-6 mx-auto bg-white rounded-md dark:bg-gray-800">
-                    <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Información de Producto</h2>  
+                    <h2 class="text-lg font-semibold text-gray-700 capitalize dark:text-white">Información del Producto</h2>  
                     <form action="#" wire:submit.prevent='guardar' method="POST">
 
                         @csrf

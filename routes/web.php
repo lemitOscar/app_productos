@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\Admin\HomeController;
-use App\Http\Controllers\AvisosController;
-use App\Http\Controllers\ContactoController;
 use App\Http\Livewire\ProductosEdit;
 use App\Http\Livewire\ProductosTable;
 use App\Http\Livewire\UsersEdit;
@@ -104,6 +101,8 @@ Route::get('/Usuarios/eliminar/{ideliminar}', UsersEdit::class)
 Route::get('/Usuarios/new', UsersEdit::class)
     ->middleware('auth')
     ->name('user.new');
+
+Route::resource('/Users', UserController::class);
 
 /*Rutas de Almacenes */
 Route::get('/Almacenes', StocksTable::class)

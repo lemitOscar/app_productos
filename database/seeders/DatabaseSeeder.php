@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Address;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Direction;
 use App\Models\Inventory;
+use App\Models\State;
 use App\Models\Stock;
 use Illuminate\Database\Seeder;
 
@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call(UserSeeder::class);
 
-        $this->call(AddressSeeder::class);
+        $this->call(StateSeeder::class);
 
         $this->call(CustomerSeeder::class);
 

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Producto;
+use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -23,7 +24,9 @@ class ProductosTable extends Component
         $prods = Producto::orderby('codigo', $this->orden)
             ->where($this->filtro,'like',$buscarSQL)
             ->paginate(5);
+
+        $users = User::all();
             
-        return view('livewire.productos-table', compact('prods'));
+        return view('livewire.productos-table', compact(['prods', 'users']));
     }
 }

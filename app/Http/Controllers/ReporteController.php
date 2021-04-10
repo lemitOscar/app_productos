@@ -17,21 +17,21 @@ class ReporteController extends Controller
             'params' => ['ID_USER' => Auth::user()->id],
             'db_connection' => [
                 'driver' => 'postgres',
-                'username' => env('DB_USERNAME'),
-                'password' => env('DB_PASSWORD'),
-                'host' => env('DB_HOST'),
-                'database' => env('DB_DATABASE'),
-                'port' => env('DB_PORT'),
+                'username' => 'postgres',
+                'password' => 'root',
+                'host' => 'localhost',
+                'database' => 'app_productos',
+                'port' => '5432',
             ]
         ];
 
         $jasper = new PHPJasper;
 
-        return $jasper->process(
+        $jasper->process(
                 $input,
                 $output,
                 $options
-        )->output();
+        )->execute();
 
         return response()->file($output.'\ReporteProducto.pdf');
     }

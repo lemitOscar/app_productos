@@ -12,11 +12,11 @@ class Customer extends Model
 
     protected $table = 'customers';
 
-    public function address(){
-        return $this->belongsTo('App\Models\Address');
-    }
-
     public function user(){
         return $this->belongsTo('App\Models\User');
+    }
+
+    public function state(){
+        return $this->belongsTo('App\Models\State');
     }
 }
