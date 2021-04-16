@@ -9,7 +9,13 @@ class State extends Model
 {
     use HasFactory;
 
+    protected $table = 'states';
+
     public function customers(){
         return $this->hasMany('App\Models\Customer');
+    }
+
+    public function stocks(){
+        return $this->hasMany('App\Models\Stock');
     }
 }

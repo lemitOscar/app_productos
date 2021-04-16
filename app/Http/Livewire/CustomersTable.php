@@ -22,7 +22,7 @@ class CustomersTable extends Component
         $buscarSQL = '%'.$this->buscar.'%';
         $customers = Customer::orderby('id', $this->orden)
             ->where($this->filtro,'like',$buscarSQL)
-            ->paginate(5);
+            ->paginate(5); 
 
         return view('livewire.customers-table', compact('customers'));
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDirectionsTable extends Migration
+class CreateStocksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,31 @@ class CreateDirectionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('directions', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
             $table->id();
 
+            $table->string('nombre', 255);
+            $table->string('telefono', 255);
+
             $table->string('pais', 255);
-            $table->string('estado', 255);
             $table->string('municipio', 255);
             $table->string('localidad', 255);
             $table->string('codigo_postal', 255);
             $table->string('calle', 255);
             $table->integer('num_ext');
             $table->integer('num_int');
+
+            $table->unsignedBigInteger('state_id')->nullable();
+            $table->foreign('state_id')
+                ->references('id')
+                ->on('states')
+                ->onDelete('set null');
+
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('set null');
 
             $table->timestamps();
         });
@@ -36,6 +50,6 @@ class CreateDirectionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('directions');
+        Schema::dropIfExists('stocks');
     }
 }

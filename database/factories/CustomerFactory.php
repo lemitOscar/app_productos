@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\Models\Address;
 use App\Models\Customer;
 use App\Models\State;
 use App\Models\User;

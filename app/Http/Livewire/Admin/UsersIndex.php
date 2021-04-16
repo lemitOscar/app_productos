@@ -13,7 +13,7 @@ class UsersIndex extends Component
     protected $queryString = ['buscar' => ['except' => '']];
     public $buscar;
     public $titulo;
-    public $filtro = 'id';
+    public $filtro = 'name';
     public $orden = 'ASC';
 
     public function render()

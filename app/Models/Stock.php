@@ -9,12 +9,14 @@ class Stock extends Model
 {
     use HasFactory;
 
+    protected $table = 'stocks';
+
     public function user(){
         return $this->belongsTo('App\Models\User');
     }
 
-    public function direction(){
-        return $this->belongsTo('App\Models\Direction');
+    public function state(){
+        return $this->belongsTo('App\Models\State');
     }
 
     /*Relacion uno a muchos */
