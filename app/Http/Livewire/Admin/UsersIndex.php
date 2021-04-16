@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Admin;
+
 use Livewire\Component;
 use App\Models\User;
 use Livewire\WithPagination;
 
-class UsersTable extends Component
+class UsersIndex extends Component
 {
     use WithPagination;
 
@@ -22,7 +23,7 @@ class UsersTable extends Component
         $users = User::orderby('name', $this->orden)
             ->where($this->filtro,'like',$buscarSQL)
             ->paginate(5);
-
-        return view('livewire.users-table', compact('users'));
+        
+        return view('livewire.admin.users-index', compact('users'));
     }
 }

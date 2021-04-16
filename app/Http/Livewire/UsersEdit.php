@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use Livewire\Component;
+use Spatie\Permission\Models\Role;
+use Illuminate\Http\Request;
 
 class UsersEdit extends Component
 {
@@ -13,6 +15,7 @@ class UsersEdit extends Component
     protected $rules = [
         'user.name' => 'required|max:255', 
         'user.email' => 'required|max:255',
+        
     ];
 
     public function mount($id = null, $ideliminar = null){
@@ -29,17 +32,21 @@ class UsersEdit extends Component
         }
     }
 
-    public function render()
+    public function render(User $user)
     {
-        return view('livewire.users-edit');
+        $roles = Role::all();
+        return view('livewire.users-edit', compact('user', 'roles'));
     }
 
-    public function guardar(){
+    public function guardar(Request $request, User $user){
+        //$this->validate();
+
+        $user->roles()->sync($request->roles);
         
-        $this->validate();
+        //$this->user->save();
 
-        $this->user->save();
+        return redirect()->route('user.edit', $user)->with('info', 'Rol asignado');
 
-        return redirect()->route('usuarios');
+        //return redirect()->route('usuarios');
     }
 }

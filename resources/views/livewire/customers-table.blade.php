@@ -23,6 +23,7 @@
 
                         <div class="relative mr-2 ml-2 md:w-1/4">
                             <select wire:model="filtro" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300">
+                                <option value="nombre">Buscar Por:</option>
                                 <option value="nombre">Nombre</option>
                                 <option value="email">Correo</option>
                                 <option value="telefono">Teléfono</option>

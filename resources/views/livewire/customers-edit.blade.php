@@ -113,7 +113,7 @@
                                 @enderror
                             </div>
 
-                            <div class="">
+                            <div>
                                 <label class="text-gray-700 dark:text-gray-200" for="num_ext">Núm. Ext.</label>
                                 <input id="num_ext" type="number" name="num_ext" wire:model='customer.num_ext' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Núm. Ext." value="{{old('num_ext')}}">
                                 @error('customer.num_ext')
@@ -132,7 +132,6 @@
                                       </div>
                                 @enderror
                             </div>
-
                         </div>
           
                         <div class="flex justify-end mt-6">

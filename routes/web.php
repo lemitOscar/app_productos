@@ -4,16 +4,13 @@ use App\Http\Livewire\ProductosEdit;
 use App\Http\Livewire\ProductosTable;
 use App\Http\Livewire\UsersEdit;
 use App\Http\Livewire\UsersTable;
-use App\Http\Controllers\PrincipalController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ReporteController;
+use App\Http\Livewire\Admin\UsersIndex;
 use App\Http\Livewire\CustomersEdit;
 use App\Http\Livewire\CustomersTable;
-use App\Http\Livewire\Home;
 use App\Http\Livewire\Index;
-use App\Http\Livewire\Navigation;
 use App\Http\Livewire\StocksTable;
-use App\Models\Customer;
-use App\Models\Stock;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -77,32 +74,15 @@ Route::get('/Cliente/eliminar/{ideliminar}', CustomersEdit::class)
 Route::get('/Cliente/new', CustomersEdit::class)
     ->middleware('auth')
     ->name('customer.new');
-/*
-Route::get('/Cliente/direccion/{id}', CustomersTable::class)
-    ->middleware('auth')
-    ->where('id', '[0-9]+')
-    ->name('customer.address');*/
 
 /*Rutas de Usuarios */
-Route::get('/Usuarios', UsersTable::class)
+Route::get('/Usuarios', UsersIndex::class)
     ->middleware('auth')
     ->name('users');
 
-Route::get('/Usuarios/editar/{id}', UsersEdit::class)
+Route::resource('users', UserController::class)->only(['edit', 'update'])
     ->middleware('auth')
-    ->where('id', '[0-9]+')
-    ->name('user.edit');
-
-Route::get('/Usuarios/eliminar/{ideliminar}', UsersEdit::class)
-    ->middleware('auth')
-    ->where('ideliminar', '[0-9]+')
-    ->name('user.delete');
-
-Route::get('/Usuarios/new', UsersEdit::class)
-    ->middleware('auth')
-    ->name('user.new');
-
-Route::resource('/Users', UserController::class);
+    ->names('admin.users');
 
 /*Rutas de Almacenes */
 Route::get('/Almacenes', StocksTable::class)
