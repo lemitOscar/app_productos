@@ -36,7 +36,21 @@
                             </div>
                         </div>
 
-                        <div class="flex ml-48 mr-2">
+                        <div class="flex ml-10 mr-2">
+                            <a href="#" class="text-white hover:text-black" target="_blank">
+                                <span class="hidden sm:block" >
+                                    <button class="inline-flex items-center px-5 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:text-gray-700 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 ">
+                                    <!-- Heroicon name: solid/pencil -->
+                                        <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
+                                            <path d="M4 18h12V6h-4V2H4v16zm-2 1V0h12l4 4v16H2v-1z"/>
+                                        </svg>
+                                        Categorias
+                                    </button>
+                                </span>
+                            </a>
+                        </div>  
+
+                        <div class="flex ml-5 mr-2">
                             <a href="#" class="text-white hover:text-black">
                                 <span class="hidden sm:block" >
                                     <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:text-gray-700 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 ">
@@ -49,6 +63,7 @@
                                 </span>
                             </a>
                         </div> 
+
                     </div>                   
 
                     </div>
@@ -109,7 +124,7 @@
                                                     </td>
 
                                                     <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900">
+                                                        <div class="text-sm text-gray-900 text-justify whitespace-normal">
                                                             {{$inventory->descripcion}}
                                                         </div>
                                                     </td>

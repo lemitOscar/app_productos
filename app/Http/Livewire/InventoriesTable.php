@@ -30,8 +30,8 @@ class InventoriesTable extends Component
         $this->titulo = "Ver Inventarios";
         $buscarSQL = '%'.$this->buscar.'%';
         $inventories = Inventory::orderby('codigo')
-            ->where('stock_id', '=', $this->stock->id)
             ->orwhere($this->filtro,'like',$buscarSQL)
+            ->where('stock_id', '=', $this->stock->id)
             ->paginate(5); 
 
         return view('livewire.inventories-table', compact('inventories'));
