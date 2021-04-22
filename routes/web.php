@@ -10,7 +10,9 @@ use App\Http\Livewire\Admin\UsersIndex;
 use App\Http\Livewire\CustomersEdit;
 use App\Http\Livewire\CustomersTable;
 use App\Http\Livewire\Index;
+use App\Http\Livewire\InventoriesTable;
 use App\Http\Livewire\StocksTable;
+use App\Http\Livewire\StocksEdit;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,7 +63,7 @@ Route::get('/Clientes', CustomersTable::class)
     ->middleware('auth')
     ->name('customers');
 
-    Route::get('/Cliente/editar/{id}', CustomersEdit::class)
+Route::get('/Cliente/editar/{id}', CustomersEdit::class)
     ->middleware('auth')
     ->where('id', '[0-9]+')
     ->name('customer.edit');
@@ -88,3 +90,22 @@ Route::resource('users', UserController::class)->only(['edit', 'update'])
 Route::get('/Almacenes', StocksTable::class)
     ->middleware('auth')
     ->name('stocks');
+
+Route::get('/Almacen/editar/{id}', StocksEdit::class)
+    ->middleware('auth')
+    ->where('id', '[0-9]+')
+    ->name('stock.edit');
+
+Route::get('/Almacen/eliminar/{ideliminar}', StocksEdit::class)
+    ->middleware('auth')
+    ->where('ideliminar', '[0-9]+')
+    ->name('stock.delete');
+
+Route::get('/Almacen/new', StocksEdit::class)
+    ->middleware('auth')
+    ->name('stock.new');
+
+/*Rutas de Inventarios */
+Route::get('/Inventarios/ver/{idver}', InventoriesTable::class)
+    ->middleware('auth')
+    ->name('inventories.show');
