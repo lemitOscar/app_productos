@@ -18,26 +18,32 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('productos') }}" :active="request()->routeIs('productos')">
+                    <x-jet-nav-link href="{{ route('productos') }}" :active="request()->routeIs(['productos', 'producto.edit', 'producto.new'])">
                         {{ __('Productos') }}
                     </x-jet-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('customers') }}" :active="request()->routeIs('customers')">
+                    <x-jet-nav-link href="{{ route('customers') }}" :active="request()->routeIs(['customers', 'customer.edit', 'customer.new'])">
                         {{ __('Clientes') }}  
                     </x-jet-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
+                    <x-jet-nav-link href="{{ route('users') }}" :active="request()->routeIs(['users', 'admin.users.edit'])">
                         {{ __('Usuarios') }}
                     </x-jet-nav-link>
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{route('stocks')}}" :active="request()->routeIs('stocks')">
+                    <x-jet-nav-link href="{{route('stocks')}}" :active="request()->routeIs(['stocks', 'stock.edit', 'stock.new', 'inventories.show', 'inventory.edit', 'inventory.new'])">
                         {{ __('Almacenes') }}
+                    </x-jet-nav-link>
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{route('categories')}}" :active="request()->routeIs(['categories', 'category.edit', 'category.new'])">
+                        {{ __('Categorias') }}
                     </x-jet-nav-link>
                 </div>
             </div>
@@ -171,26 +177,32 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('productos') }}" :active="request()->routeIs('productos')">
+            <x-jet-responsive-nav-link href="{{ route('productos') }}" :active="request()->routeIs(['productos', 'producto.edit', 'producto.new'])">
                 {{ __('Productos') }}
             </x-jet-responsive-nav-link>
         </div>
 
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('customers') }}" :active="request()->routeIs('customers')">
+            <x-jet-responsive-nav-link href="{{ route('customers') }}" :active="request()->routeIs(['customers', 'customer.edit', 'customer.new'])">
                 {{ __('Clientes') }}
             </x-jet-responsive-nav-link>
         </div>
 
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
+            <x-jet-responsive-nav-link href="{{ route('users') }}" :active="request()->routeIs(['users', 'admin.users.edit'])">
                 {{ __('Usuarios') }}
             </x-jet-responsive-nav-link>
         </div>
 
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="#" :active="request()->routeIs('almacenes')">
+            <x-jet-responsive-nav-link href="{{ route('stocks')}}" :active="request()->routeIs(['stocks', 'stock.edit', 'stock.new', 'inventories.show', 'inventory.edit', 'inventory.new'])">
                 {{ __('Almacenes') }}
+            </x-jet-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{ route('categories')}}" :active="request()->routeIs(['categories', 'category.edit', 'category.new'])">
+                {{ __('Categorias') }}
             </x-jet-responsive-nav-link>
         </div>
 

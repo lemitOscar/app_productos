@@ -19,8 +19,9 @@ class CreateProductosTable extends Migration
             $table->string('nombre', 255);
             $table->string('marca', 255);
             $table->string('descripcion', 255);
-            $table->integer('cantidad');
             $table->decimal('precio', $precision = 8, $scale = 2);
+            $table->integer('cantidad');
+            $table->integer('estatus');
 
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')

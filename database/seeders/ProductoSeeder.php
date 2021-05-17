@@ -14,6 +14,12 @@ class ProductoSeeder extends Seeder
      */
     public function run()
     {
-        Producto::factory(100)->create();
+        $prods = Producto::factory(100)->create();
+        foreach($prods as $prod){
+          $prod->inventories()->attach([
+                rand(1, 5),
+                rand(6, 10),
+              ]);  
+        }
     }
 }

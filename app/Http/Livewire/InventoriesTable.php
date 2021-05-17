@@ -27,7 +27,7 @@ class InventoriesTable extends Component
 
     public function render()
     {
-        $this->titulo = "Ver Inventarios";
+        $this->titulo = "Inventarios";
         $buscarSQL = '%'.$this->buscar.'%';
         $inventories = Inventory::orderby('codigo')
             ->orwhere($this->filtro,'like',$buscarSQL)

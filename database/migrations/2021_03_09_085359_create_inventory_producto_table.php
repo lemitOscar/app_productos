@@ -15,7 +15,7 @@ class CreateInventoryProductoTable extends Migration
     {
         Schema::create('inventory_producto', function (Blueprint $table) {
             $table->id();
-            
+
             $table->unsignedBigInteger('inventory_id');
             $table->foreign('inventory_id')
                 ->references('id')

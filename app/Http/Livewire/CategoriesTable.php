@@ -2,30 +2,28 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Inventory_Producto;
-use App\Models\Producto;
-use App\Models\User;
+use App\Models\Category;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class ProductosTable extends Component
+class CategoriesTable extends Component
 {
     use WithPagination;
 
     protected $queryString = ['buscar' => ['except' => '']];
     public $buscar;
     public $titulo;
-    public $filtro = 'codigo';
+    public $filtro = 'nombre';
     public $orden = 'ASC';
 
     public function render()
     {
-        $this->titulo = "Productos";
+        $this->titulo = "Categorias";
         $buscarSQL = '%'.$this->buscar.'%';
-        $prods = Producto::orderby('codigo', $this->orden)
+        $categories = Category::orderby('id', $this->orden)
             ->where($this->filtro,'like',$buscarSQL)
-            ->paginate(5);
-            
-        return view('livewire.productos-table', compact('prods'));
+            ->paginate(5); 
+
+        return view('livewire.categories-table', compact('categories'));
     }
 }

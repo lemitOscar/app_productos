@@ -26,9 +26,10 @@ class ProductoFactory extends Factory
             'codigo' => $this->faker->numberBetween($min = 1000000000, $max = 9000000000), 
             'nombre' => $this->faker->name,
             'marca' => 'Marca de Prueba',
-            'descripcion' => 'Productos de Prueba', 
-            'cantidad' => $this->faker->randomNumber($nbDigits = 3, $strict = false, $min = 1), 
+            'descripcion' => 'Productos de Prueba',  
             'precio' => $this->faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 100),
+            'cantidad' => $this->faker->numberBetween($min = 0, $max = 1000),
+            'estatus' => $this->faker->randomElement([0, 1]),
             'user_id' => User::all()->random()->id,
         ];
     }

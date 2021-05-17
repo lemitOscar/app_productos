@@ -106,7 +106,7 @@
                                                     </td>
 
                                                     <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900 text-justify whitespace-normal">
+                                                        <div class="text-sm text-gray-900 text-center whitespace-normal">
                                                             {{$stock->calle}}
                                                             {{$stock->num_ext}}
                                                             {{$stock->num_int}}

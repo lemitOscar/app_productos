@@ -45,7 +45,8 @@
           
                             <div>
                               <label class="text-gray-700 dark:text-gray-200" for="descripcion">Descripción del Producto</label>
-                              <input id="descripcion" type="text" name="descripcion" wire:model='prod.descripcion' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Descripción" value="{{old('descripcion')}}">
+                              <!--<input id="descripcion" type="text" name="descripcion" wire:model='prod.descripcion' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Descripción" value="">-->
+                              <textarea rows="1" cols="250" maxlength="250" minlength="10" spellcheck="true" id="descripcion" type="text" name="descripcion" wire:model='prod.descripcion' class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="Descripción" value="{{old('descripcion')}}"></textarea>
                               @error('prod.descripcion')
                                     <div class="px-4 py-2 mt-1 leading-normal text-red-700 bg-red-100 rounded-lg" role="alert">
                                         <p>Error! {{$message}}</p>

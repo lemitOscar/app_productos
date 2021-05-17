@@ -34,24 +34,10 @@
                                     <line x1="21" y1="21" x2="15" y2="15" />
                                 </svg>
                             </div>
-                        </div>
-
-                        <div class="flex ml-10 mr-2">
-                            <a href="#" class="text-white hover:text-black" target="_blank">
-                                <span class="hidden sm:block" >
-                                    <button class="inline-flex items-center px-5 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:text-gray-700 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 ">
-                                    <!-- Heroicon name: solid/pencil -->
-                                        <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
-                                            <path d="M4 18h12V6h-4V2H4v16zm-2 1V0h12l4 4v16H2v-1z"/>
-                                        </svg>
-                                        Categorias
-                                    </button>
-                                </span>
-                            </a>
                         </div>  
 
-                        <div class="flex ml-5 mr-2">
-                            <a href="#" class="text-white hover:text-black">
+                        <div class="flex ml-48 mr-2">
+                            <a href="{{route('inventory.new', $stock->id)}}" class="text-white hover:text-black">
                                 <span class="hidden sm:block" >
                                     <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:text-gray-700 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 ">
                                     <!-- Heroicon name: solid/pencil -->
@@ -95,6 +81,11 @@
                                                     <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Categoria
                                                     </th>
+
+                                                    <th scope="col" class="w-1/12 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    Productos
+                                                    <span class="sr-only">Productos</span>
+                                                    </th>
                                     
                                                     <th scope="col" class="w-1/12 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Editar
@@ -124,7 +115,7 @@
                                                     </td>
 
                                                     <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                        <div class="text-sm text-gray-900 text-justify whitespace-normal">
+                                                        <div class="text-sm text-gray-900 text-center whitespace-normal">
                                                             {{$inventory->descripcion}}
                                                         </div>
                                                     </td>
@@ -143,7 +134,22 @@
 
                                                     @if ($inventories->count())
                                                     <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
-                                                        <a href="#" class="text-white hover:text-black">
+                                                        <a href="{{route('productos.show', $inventory->id)}}" class="text-white hover:text-black">
+                                                            <div class="hidden sm:block">
+                                                                <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-blue-500 hover:text-gray-700 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                                                <!-- Heroicon name: solid/pencil -->
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="-ml-1 mr-2 h-5 w-5 text-gray-500" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" arial-hidden="true">
+                                                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                                        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                                                                    </svg>
+                                                                    Ver
+                                                                </button>
+                                                            </div>
+                                                        </a>
+                                                    </td>
+
+                                                    <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
+                                                        <a href="{{route('inventory.edit', [$stock->id, $inventory->id])}}" class="text-white hover:text-black">
                                                             <div class="hidden sm:block">
                                                                 <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-yellow-500 hover:text-gray-700 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
                                                                 <!-- Heroicon name: solid/pencil -->
@@ -157,7 +163,7 @@
                                                     </td>
                                     
                                                     <td class="w-1/12 px-6 py-4 whitespace-nowrap">
-                                                        <a href="#" class="text-white hover:text-black">
+                                                        <a href="{{route('inventory.delete', [$stock->id, $inventory->id])}}" class="text-white hover:text-black">
                                                             <div class="hidden sm:block" >
                                                                 <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:text-gray-700 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                                                                 <!-- Heroicon name: solid/pencil -->

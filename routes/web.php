@@ -7,9 +7,13 @@ use App\Http\Livewire\UsersTable;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ReporteController;
 use App\Http\Livewire\Admin\UsersIndex;
+use App\Http\Livewire\CategoriesEdit;
+use App\Http\Livewire\CategoriesTable;
 use App\Http\Livewire\CustomersEdit;
 use App\Http\Livewire\CustomersTable;
 use App\Http\Livewire\Index;
+use App\Http\Livewire\InventoriesEdit;
+use App\Http\Livewire\InventoriesProductosTable;
 use App\Http\Livewire\InventoriesTable;
 use App\Http\Livewire\StocksTable;
 use App\Http\Livewire\StocksEdit;
@@ -106,6 +110,44 @@ Route::get('/Almacen/new', StocksEdit::class)
     ->name('stock.new');
 
 /*Rutas de Inventarios */
-Route::get('/Inventarios/ver/{idver}', InventoriesTable::class)
+Route::get('Almacen/{idver}/Inventarios/ver', InventoriesTable::class)
     ->middleware('auth')
     ->name('inventories.show');
+
+Route::get('/Almacen/{idver}/Inventario/editar/{id}', InventoriesEdit::class)
+    ->middleware('auth')
+    ->where('id', '[0-9]+')
+    ->name('inventory.edit');
+
+Route::get('/Almacen/{idver}/Inventario/eliminar/{ideliminar}', InventoriesEdit::class)
+    ->middleware('auth')
+    ->where('ideliminar', '[0-9]+')
+    ->name('inventory.delete');
+
+Route::get('Almacen/{idver}/Inventario/new', InventoriesEdit::class)
+    ->middleware('auth')
+    ->name('inventory.new');
+
+/*Rutas de Categoria*/
+Route::get('/Categorias', CategoriesTable::class)
+    ->middleware('auth')
+    ->name('categories');
+
+Route::get('/Categoria/editar/{id}', CategoriesEdit::class)
+    ->middleware('auth')
+    ->where('id', '[0-9]+')
+    ->name('category.edit');
+
+Route::get('/Categoria/eliminar/{ideliminar}', CategoriesEdit::class)
+    ->middleware('auth')
+    ->where('ideliminar', '[0-9]+')
+    ->name('category.delete');
+
+Route::get('/Categoria/new', CategoriesEdit::class)
+    ->middleware('auth')
+    ->name('category.new');
+
+/*Rutas de Inventarios con Productos */
+Route::get('/Inventario/{idver}/Productos/ver', InventoriesProductosTable::class)
+    ->middleware('auth')
+    ->name('productos.show');

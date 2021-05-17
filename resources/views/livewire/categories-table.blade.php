@@ -23,11 +23,8 @@
 
                         <div class="relative mr-2 ml-2 md:w-1/4">
                             <select wire:model="filtro" class="w-full pl-10 pr-4 py-2 rounded-lg shadow focus:outline-none focus:shadow-outline text-gray-600 font-medium border-gray-300">
-                                <option value="codigo">Buscar Por:</option>
-                                <option value="codigo">Código</option>
+                                <option value="nombre">Buscar Por:</option>
                                 <option value="nombre">Nombre</option>
-                                <option value="marca">Marca</option>
-                                <option value="precio">Precio</option>
                             </select>
                             <div class="absolute top-0 left-0 inline-flex items-center p-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-400" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -39,25 +36,10 @@
                             </div>
                         </div>
 
-                        <div class="flex ml-10 mr-2">
-                            <a href="{{route('productos.file')}}" class="text-white hover:text-black" target="_blank">
-                                <span class="hidden sm:block" >
-                                    <button class="inline-flex items-center px-5 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:text-gray-700 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600 ">
-                                    <!-- Heroicon name: solid/pencil -->
-                                        <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
-                                            <path d="M4 18h12V6h-4V2H4v16zm-2 1V0h12l4 4v16H2v-1z"/>
-                                        </svg>
-                                        PDF
-                                    </button>
-                                </span>
-                            </a>
-                        </div> 
-
-                        <div class="flex ml-10 mr-2">
-                            <a href="{{route('producto.new')}}" class="text-white hover:text-black">
+                        <div class="flex ml-48 mr-2">
+                            <a href="{{route('category.new')}}" class="text-white hover:text-black">
                                 <span class="hidden sm:block" >
                                     <button class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:text-gray-700 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600 ">
-                                    <!-- Heroicon name: solid/pencil -->
                                         <svg class="-ml-1 mr-2 h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="rgba(255, 255, 255, var(--tw-bg-opacity))" aria-hidden="true">
                                             <path xmlns="http://www.w3.org/2000/svg" d="M11 9h4v2h-4v4H9v-4H5V9h4V5h2v4zm-1 11a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/>
                                         </svg>
@@ -69,8 +51,7 @@
                     </div>                   
 
                     </div>
-                    @if($prods->count())
-                    <!-- This example requires Tailwind CSS v2.0+ -->
+                    @if($categories->count())
                         <div class="flex flex-col">
                             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                                 <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
@@ -78,96 +59,35 @@
                                         <table class="min-w-full divide-y divide-gray-200">
                                             <thead class="bg-gray-50">
                                                 <tr>
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Código
-                                                    </th>
-                                                    
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                    <th scope="col" class="w-5/6 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Nombre
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Marca
-                                                    </th>
-                                                    
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Descripción
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Precio
-                                                    </th>
-
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Cantidad
-                                                    </th>
-    
-                                                    <th scope="col" class="w-1/4 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                                    Estatus
                                                     </th>
                                     
                                                     <th scope="col" class="w-1/12 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Editar
                                                     <span class="sr-only">Editar</span>
                                                     </th>
-                                                @can('producto.delete')
+                        
                                                     <th scope="col" class="w-1/12 px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Eliminar
                                                     <span class="sr-only">Eliminar</span>
                                                     </th>
-                                                @endcan
                                                 </tr>
                                             </thead>
 
                                             <tbody class="bg-white divide-y divide-gray-200">
-                                            @foreach ($prods as $prod)
+                                            @foreach ($categories as $category)
                                                    
                                                     <tr>
-                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
+                                                        <td class="w-5/6 px-6 py-3 text-center whitespace-nowrap">
                                                             <div class="text-sm text-gray-900">
-                                                                {{$prod->codigo}}
-                                                            </div>
-                                                        </td>
-                                        
-                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                            <div class="text-sm text-gray-900">
-                                                                {{$prod->nombre}}
+                                                                {{$category->nombre}}
                                                             </div>
                                                         </td>
 
-                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                            <div class="text-sm text-gray-900">
-                                                                {{$prod->marca}}
-                                                            </div>
-                                                        </td>
-                                                
-                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                            <div class="text-sm text-gray-900 text-center whitespace-normal">
-                                                                {{$prod->descripcion}}
-                                                            </div>
-                                                        </td>
-
-                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                            <div class="text-sm text-gray-900">
-                                                                ${{$prod->precio}}
-                                                            </div>
-                                                        </td>
-
-                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                            <div class="text-sm text-gray-900">
-                                                                {{$prod->cantidad}}
-                                                            </div>
-                                                        </td>
-
-                                                        <td class="w-auto px-6 py-3 text-center whitespace-nowrap">
-                                                            <div class="text-sm text-gray-900">
-                                                                {{$prod->estatus}}
-                                                            </div>
-                                                        </td>
-
-                                                        @if ($prods->count())
+                                                        @if ($categories->count())
                                                         <td class="w-1/12 px-6 py-3 text-center whitespace-nowrap">
-                                                            <a href="{{route('producto.edit', $prod->id)}}" class="text-white hover:text-black">
+                                                            <a href="{{route('category.edit', $category->id)}}" class="text-white hover:text-black">
                                                                 <div class="hidden sm:block">
                                                                     <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-yellow-500 hover:text-gray-700 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
                                                                     <!-- Heroicon name: solid/pencil -->
@@ -179,9 +99,9 @@
                                                                 </div>
                                                             </a>
                                                         </td>
-                                                        @can('producto.delete')
-                                                        <td class="w-1/12 px-6 py-4 whitespace-nowrap">
-                                                            <a href="{{route('producto.delete', $prod->id)}}" class="text-white hover:text-black">
+                                    
+                                                        <td class="w-1/12 px-6 py-3 whitespace-nowrap">
+                                                            <a href="{{route('category.delete', $category->id)}}" class="text-white hover:text-black">
                                                                 <div class="hidden sm:block" >
                                                                     <button type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:text-gray-700 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                                                                     <!-- Heroicon name: solid/pencil -->
@@ -193,7 +113,6 @@
                                                                 </div>
                                                             </a>
                                                         </td>
-                                                        @endcan
                                                         @endif
                                                     </tr>
                                                 
@@ -204,7 +123,7 @@
     
                                         <!-- Paginación -->
                                         <div class="bg-white px-4 py-3 item-center justify-between border-t border-gray-200 sm:px-6">        
-                                            {{$prods->links()}}      
+                                            {{$categories->links()}}      
                                         </div>
                                     </div>
                                 </div>
