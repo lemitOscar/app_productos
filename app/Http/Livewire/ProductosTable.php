@@ -22,10 +22,14 @@ class ProductosTable extends Component
     {
         $this->titulo = "Productos";
         $buscarSQL = '%'.$this->buscar.'%';
-        $prods = Producto::orderby('codigo', $this->orden)
-            ->where($this->filtro,'like',$buscarSQL)
-            ->paginate(5);
-            
+        $prods = Producto::orderby('codigo', $this->orden)->where($this->filtro,'like',$buscarSQL)->paginate(5);
+    
+
         return view('livewire.productos-table', compact('prods'));
+    }
+
+    public function lista_productos(){
+        $productos = Producto::all();
+        return $productos;
     }
 }
