@@ -28,7 +28,7 @@ class ProductosTable extends Component
         return view('livewire.productos-table', compact('prods'));
     }
 
-    public function lista_productos(){
+    public function listar_productos(){
         $productos = Producto::all();
         return $productos;
     }

@@ -4,10 +4,9 @@ namespace App\Http\Livewire;
 
 use App\Models\Producto;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-
-use function PHPUnit\Framework\isNull;
 
 class ProductosEdit extends Component
 {
@@ -54,5 +53,23 @@ class ProductosEdit extends Component
         $this->prod->save();
 
         return redirect()->route('productos');
+    }
+
+    public function guardar_productos(Request $request){
+        $productos = new Producto();
+        $productos->codigo = $request->codigo;
+        $productos->nombre = $request->nombre;
+        $productos->marca = $request->marca;
+        $productos->descripcion = $request->descripcion;
+        $productos->precio = $request->precio;
+        $productos->cantidad = $request->cantidad;
+        $productos->estatus = $request->estatus;
+        $productos->save();
+        return response()->json($productos, 200);
+    }
+
+    public function eliminar_productos(Request $request){
+        $productos = Producto::find($request->id);
+        $productos->delete();
     }
 }
