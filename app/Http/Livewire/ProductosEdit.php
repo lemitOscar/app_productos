@@ -68,6 +68,19 @@ class ProductosEdit extends Component
         return response()->json($productos, 200);
     }
 
+    public function actualizar_productos(Request $request){
+        $productos = Producto::find($request->id);
+        $productos->codigo = $request->codigo;
+        $productos->nombre = $request->nombre;
+        $productos->marca = $request->marca;
+        $productos->descripcion = $request->descripcion;
+        $productos->precio = $request->precio;
+        $productos->cantidad = $request->cantidad;
+        $productos->estatus = $request->estatus;
+        $productos->save();
+        return response()->json($productos, 200);
+    }
+
     public function eliminar_productos(Request $request){
         $productos = Producto::find($request->id);
         $productos->delete();
