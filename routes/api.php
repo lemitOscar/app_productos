@@ -2,6 +2,8 @@
 
 use App\Http\Livewire\ProductosEdit;
 use App\Http\Livewire\ProductosTable;
+use App\Http\Livewire\StocksEdit;
+use App\Http\Livewire\StocksTable;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +21,13 @@ Route::get('/listar_productos', [ProductosTable::class, 'listar_productos']);//-
 Route::post('/guardar_productos', [ProductosEdit::class, 'guardar_productos']);
 Route::put('/actualizar_productos', [ProductosEdit::class, 'actualizar_productos']);
 Route::delete('eliminar_productos', [ProductosEdit::class, 'eliminar_productos']);
+
+
+
+Route::get('/listar_almacenes', [StocksTable::class, 'listar_almacenes']);
+Route::post('/guardar_almacenes', [StocksEdit::class, 'guardar_almacenes']);
+Route::put('/actualizar_almacenes', [StocksEdit::class, 'actualizar_almacenes']);
+Route::delete('eliminar_productos', [StocksEdit::class, 'eliminar_almacenes']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Customer;
 use App\Models\State;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -59,5 +60,50 @@ class CustomersEdit extends Component
         $this->customer->save();
 
         return redirect()->route('customers');
+    }
+
+    public function guardar_clientes(Request $request){
+        if($request->id = null){
+            $customers = new Customer();
+        }else{
+            $customers = Customer::find($request->id);
+        }
+        $customers->nombre = $request->nombre;
+        $customers->email = $request->email;
+        $customers->telefono = $request->telefono;
+        $customers->pais = $request->pais;
+        $customers->municipio = $request->municipio;
+        $customers->localidad = $request->localidad;
+        $customers->codigo_postal = $request->codigo_postal;
+        $customers->calle = $request->calle;
+        $customers->num_ext = $request->num_ext;
+        $customers->num_int = $request->num_int;
+        $customers->state_id = $request->state_id;
+        $customers->user_id = $request->user_id;
+        $customers->save();
+        return response()->json($customers, 200);
+    }
+
+    public function actualizar_clientes(Request $request){
+        $customers = Customer::find($request->id);
+        $customers->nombre = $request->nombre;
+        $customers->email = $request->email;
+        $customers->telefono = $request->telefono;
+        $customers->pais = $request->pais;
+        $customers->municipio = $request->municipio;
+        $customers->localidad = $request->localidad;
+        $customers->codigo_postal = $request->codigo_postal;
+        $customers->calle = $request->calle;
+        $customers->num_ext = $request->num_ext;
+        $customers->num_int = $request->num_int;
+        $customers->state_id = $request->state_id;
+        $customers->user_id = $request->user_id;
+        $customers->save();
+        return response()->json($customers, 200);
+    }
+
+    public function eliminar_clientes(Request $request){
+        $customers = Customer::find($request->id);
+        $customers->delete();
     }
 }

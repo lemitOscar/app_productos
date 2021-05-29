@@ -7,6 +7,7 @@ use App\Models\Stock;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Http\Request;
 
 class StocksEdit extends Component
 {
@@ -59,5 +60,48 @@ class StocksEdit extends Component
         $this->stock->save();
 
         return redirect()->route('stocks');
+    }
+
+    public function guardar_almacenes(Request $request){
+        if($request->id = null){
+            $stocks = new Stock();
+        }else{
+            $stocks = Stock::find($request->id);
+        }
+        $stocks->nombre = $request->nombre;
+        $stocks->telefono = $request->telefono;
+        $stocks->pais = $request->pais;
+        $stocks->municipio = $request->municipio;
+        $stocks->localidad = $request->localidad;
+        $stocks->codigo_postal = $request->codigo_postal;
+        $stocks->calle = $request->calle;
+        $stocks->num_ext = $request->num_ext;
+        $stocks->num_int = $request->num_int;
+        $stocks->state_id = $request->state_id;
+        $stocks->user_id = $request->user_id;
+        $stocks->save();
+        return response()->json($stocks, 200);
+    }
+
+    public function actualizar_almacenes(Request $request){
+        $stocks = Stock::find($request->id);
+        $stocks->nombre = $request->nombre;
+        $stocks->telefono = $request->telefono;
+        $stocks->pais = $request->pais;
+        $stocks->municipio = $request->municipio;
+        $stocks->localidad = $request->localidad;
+        $stocks->codigo_postal = $request->codigo_postal;
+        $stocks->calle = $request->calle;
+        $stocks->num_ext = $request->num_ext;
+        $stocks->num_int = $request->num_int;
+        $stocks->state_id = $request->state_id;
+        $stocks->user_id = $request->user_id;
+        $stocks->save();
+        return response()->json($stocks, 200);
+    }
+
+    public function eliminar_almacenes(Request $request){
+        $stocks = Stock::find($request->id);
+        $stocks->delete();
     }
 }

@@ -26,4 +26,9 @@ class StocksTable extends Component
 
         return view('livewire.stocks-table', compact('stocks'));
     }
+
+    public function listar_almacenes(){
+        $stocks = Stock::all();
+        return $stocks;
+    }
 }

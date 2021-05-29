@@ -26,4 +26,9 @@ class CustomersTable extends Component
 
         return view('livewire.customers-table', compact('customers'));
     }
+
+    public function listar_clientes(){
+        $customers = Customer::all();
+        return $customers;
+    }
 }
