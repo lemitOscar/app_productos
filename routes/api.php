@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\CustomersEdit;
+use App\Http\Livewire\CustomersTable;
 use App\Http\Livewire\ProductosEdit;
 use App\Http\Livewire\ProductosTable;
 use App\Http\Livewire\StocksEdit;
@@ -20,19 +22,27 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//Productos
 Route::get('/listar_productos', [ProductosTable::class, 'listar_productos']);//->middleware('auth:sanctum');
 Route::post('/guardar_productos', [ProductosEdit::class, 'guardar_productos']);
 //Route::post('/actualizar_productos', [ProductosEdit::class, 'actualizar_productos']);
 Route::delete('eliminar_productos', [ProductosEdit::class, 'eliminar_productos']);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 72ff9bca21ab21233dbf6278ef8dd3597710e266
 //Clientes
 Route::get('/listar_clientes', [CustomersTable::class, 'listar_clientes']);
 Route::post('/guardar_clientes', [CustomersEdit::class, 'guardar_clientes']);
 Route::put('/actualizar_clientes', [CustomersEdit::class, 'actualizar_clientes']);
 Route::delete('eliminar_clientes', [CustomersEdit::class, 'eliminar_clientes']);
+<<<<<<< HEAD
 
 
+=======
+//Almacenes
+>>>>>>> 72ff9bca21ab21233dbf6278ef8dd3597710e266
 Route::get('/listar_almacenes', [StocksTable::class, 'listar_almacenes']);
 Route::post('/guardar_almacenes', [StocksEdit::class, 'guardar_almacenes']);
 Route::put('/actualizar_almacenes', [StocksEdit::class, 'actualizar_almacenes']);
