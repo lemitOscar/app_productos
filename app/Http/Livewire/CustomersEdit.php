@@ -63,7 +63,7 @@ class CustomersEdit extends Component
     }
 
     public function guardar_clientes(Request $request){
-        if($request->id = null){
+        if($request->id == null){
             $customers = new Customer();
         }else{
             $customers = Customer::find($request->id);
@@ -76,10 +76,10 @@ class CustomersEdit extends Component
         $customers->localidad = $request->localidad;
         $customers->codigo_postal = $request->codigo_postal;
         $customers->calle = $request->calle;
-        $customers->num_ext = $request->num_ext;
-        $customers->num_int = $request->num_int;
-        $customers->state_id = $request->state_id;
-        $customers->user_id = $request->user_id;
+        // $customers->num_ext = $request->num_ext;
+        // $customers->num_int = $request->num_int;
+        // $customers->state_id = $request->state_id;
+        // $customers->user_id = $request->user_id;
         $customers->save();
         return response()->json($customers, 200);
     }

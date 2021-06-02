@@ -15,7 +15,7 @@ class ProductosEdit extends Component
     public $titulo;
 
     protected $rules = [
-        'prod.codigo' => 'required|min:6|max:10', 
+        'prod.codigo' => 'required|min:6|max:10',
         'prod.nombre' => 'required|max:50',
         'prod.marca' => 'required|max:50',
         'prod.descripcion' => 'required|max:50',
@@ -23,29 +23,31 @@ class ProductosEdit extends Component
         'prod.precio' => 'required|numeric',
     ];
 
-    public function mount($id = null, $ideliminar = null ){
-        if(is_null($id) && is_null($ideliminar)){
+    public function mount($id = null, $ideliminar = null)
+    {
+        if (is_null($id) && is_null($ideliminar)) {
             $this->titulo = "Nuevo Producto";
             $this->prod = new Producto();
             //Auth::user()->id;
-        }elseif(is_null($id)){
+        } elseif (is_null($id)) {
             $this->prod = Producto::find($ideliminar);
             $this->prod->delete();
             return redirect()->route('productos');
-        }else{
+        } else {
             $this->titulo = "Editar Producto";
             $this->prod = Producto::find($id);
         }
-    } 
+    }
 
     public function render()
     {
         return view('livewire.productos-edit');
     }
 
-    public function guardar(){
+    public function guardar()
+    {
         $this->validate();
-        if(is_null($this->prod->user_id)){
+        if (is_null($this->prod->user_id)) {
             $this->prod->user_id = Auth::user()->id;
         }
         $this->authorize('update', $this->prod);
@@ -55,12 +57,14 @@ class ProductosEdit extends Component
         return redirect()->route('productos');
     }
 
-    public function guardar_productos(Request $request){
-        if($request->id = null){
+    public function guardar_productos(Request $request)
+    {
+        if ($request->id == null) {
             $productos = new Producto();
-        }else{
+        } else {
             $productos = Producto::find($request->id);
         }
+
         $productos->codigo = $request->codigo;
         $productos->nombre = $request->nombre;
         $productos->marca = $request->marca;
@@ -68,12 +72,13 @@ class ProductosEdit extends Component
         $productos->precio = $request->precio;
         $productos->cantidad = $request->cantidad;
         $productos->estatus = $request->estatus;
-        $productos->user_id = $request->user_id;
+        //$productos->user_id = $request->user_id;
         $productos->save();
         return response()->json($productos, 200);
     }
 
-    public function actualizar_productos(Request $request){
+    public function actualizar_productos(Request $request)
+    {
         $productos = Producto::find($request->id);
         $productos->codigo = $request->codigo;
         $productos->nombre = $request->nombre;
@@ -87,7 +92,8 @@ class ProductosEdit extends Component
         return response()->json($productos, 200);
     }
 
-    public function eliminar_productos(Request $request){
+    public function eliminar_productos(Request $request)
+    {
         $productos = Producto::find($request->id);
         $productos->delete();
     }
