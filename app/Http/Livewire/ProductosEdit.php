@@ -56,11 +56,7 @@ class ProductosEdit extends Component
     }
 
     public function guardar_productos(Request $request){
-        if($request->id = null){
-            $productos = new Producto();
-        }else{
-            $productos = Producto::find($request->id);
-        }
+        $productos = new Producto();
         $productos->codigo = $request->codigo;
         $productos->nombre = $request->nombre;
         $productos->marca = $request->marca;
@@ -68,7 +64,7 @@ class ProductosEdit extends Component
         $productos->precio = $request->precio;
         $productos->cantidad = $request->cantidad;
         $productos->estatus = $request->estatus;
-        $productos->user_id = $request->user_id;
+        //$productos->user_id = $request->user_id;
         $productos->save();
         return response()->json($productos, 200);
     }
@@ -82,7 +78,7 @@ class ProductosEdit extends Component
         $productos->precio = $request->precio;
         $productos->cantidad = $request->cantidad;
         $productos->estatus = $request->estatus;
-        $productos->user_id = $request->user_id;
+        //$productos->user_id = $request->user_id;
         $productos->save();
         return response()->json($productos, 200);
     }
