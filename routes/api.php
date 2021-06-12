@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Livewire\CustomersEdit;
 use App\Http\Livewire\ProductosEdit;
 use App\Http\Livewire\ProductosTable;
@@ -21,8 +22,12 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->middleware('auth:sanctum');
 //Productos
-Route::get('/listar_productos', [ProductosTable::class, 'listar_productos']);//->middleware('auth:sanctum');
+Route::get('/listar_productos', [ProductosTable::class, 'listar_productos'])->middleware('auth:sanctum');
+Route::post('/listar_productos_filtro', [ProductosTable::class, 'listar_productos_filtro'])->middleware('auth:sanctum');
 Route::post('/guardar_productos', [ProductosEdit::class, 'guardar_productos']);
 //Route::post('/actualizar_productos', [ProductosEdit::class, 'actualizar_productos']);
 Route::delete('eliminar_productos', [ProductosEdit::class, 'eliminar_productos']);

@@ -64,7 +64,6 @@ class ProductosEdit extends Component
         } else {
             $productos = Producto::find($request->id);
         }
-
         $productos->codigo = $request->codigo;
         $productos->nombre = $request->nombre;
         $productos->marca = $request->marca;
@@ -87,7 +86,7 @@ class ProductosEdit extends Component
         $productos->precio = $request->precio;
         $productos->cantidad = $request->cantidad;
         $productos->estatus = $request->estatus;
-        $productos->user_id = $request->user_id;
+        //$productos->user_id = $request->user_id;
         $productos->save();
         return response()->json($productos, 200);
     }

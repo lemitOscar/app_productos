@@ -7,6 +7,7 @@ use App\Models\Producto;
 use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Illuminate\Http\Request;
 
 class ProductosTable extends Component
 {
@@ -30,6 +31,11 @@ class ProductosTable extends Component
 
     public function listar_productos(){
         $productos = Producto::all();
+        return $productos;
+    }
+
+    public function listar_productos_filtro(Request $request){
+        $productos = Producto::where('codigo', 'like', $request->codigo)->get();
         return $productos;
     }
 }
