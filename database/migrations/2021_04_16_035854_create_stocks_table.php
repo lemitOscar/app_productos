@@ -24,8 +24,8 @@ class CreateStocksTable extends Migration
             $table->string('localidad', 255);
             $table->string('codigo_postal', 255);
             $table->string('calle', 255);
-            $table->integer('num_ext');
-            $table->integer('num_int');
+            $table->integer('num_ext')->nullable();
+            $table->integer('num_int')->nullable();
 
             $table->unsignedBigInteger('state_id')->nullable();
             $table->foreign('state_id')

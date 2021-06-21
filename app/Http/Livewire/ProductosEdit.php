@@ -70,7 +70,7 @@ class ProductosEdit extends Component
         $productos->descripcion = $request->descripcion;
         $productos->precio = $request->precio;
         $productos->cantidad = $request->cantidad;
-        $productos->estatus = $request->estatus;
+        //$productos->estatus = $request->estatus;
         //$productos->user_id = $request->user_id;
         $productos->save();
         return response()->json($productos, 200);

@@ -24,7 +24,7 @@ class LoginController extends Controller
         }else{
             $response = [
                 'displayName' => '',
-                'userId' => '',
+                'userId' => 0,
                 'token' => '',
                 'message' => "Usuario no Encontrado"
             ];
